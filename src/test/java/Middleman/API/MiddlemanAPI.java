@@ -9,7 +9,7 @@ import net.thucydides.core.annotations.Step;
 public class MiddlemanAPI {
     public static final String URL = "https://postme.site";
     public static final String DIR = System.getProperty("user.dir");
-    public static final String JSON_FILE = DIR+"/src/test/resources/JSONFile";
+    public static final String JSON_FILE_LOGIN = DIR+"/src/test/resources/JSONFile/Login";
     public static String POST_LOGIN_USER = URL+"/login";
 
     @Step("Post login user or admin")
