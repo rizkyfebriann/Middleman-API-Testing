@@ -6,4 +6,6 @@ public class MiddlemanResponses {
     public static final String NAME = "data.name";
     public static final String ROLE = "data.role";
     public static final String TOKEN = "data.token";
+    public static final String CODE = "code";
+    public static final String MESSAGE = "message";
 }
