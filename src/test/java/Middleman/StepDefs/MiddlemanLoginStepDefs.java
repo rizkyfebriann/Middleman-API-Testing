@@ -72,4 +72,14 @@ public class MiddlemanLoginStepDefs {
         File jsonFilesInvalidLoginUser7 = new File( MiddlemanAPI.JSON_FILE_LOGIN+"/InvalidLoginUserEmptyPassword.json");
         middlemanAPI.postLoginUserOrAdmin(jsonFilesInvalidLoginUser7);
     }
+
+    @When("Send request post login user on invalid path")
+    public void sendRequestPostLoginUserOnInvalidPath() {
+        SerenityRest.when().post(MiddlemanAPI.POST_LOGININVALID_USER);
+    }
+
+    @Then("API response status code should be {int} not found")
+    public void apiResponseStatusCodeShouldBeNotFound(int not_found) {
+        SerenityRest.then().statusCode(not_found);
+    }
 }
