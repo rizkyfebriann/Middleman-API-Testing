@@ -72,7 +72,7 @@ public class MiddlemanAPI {
     @Step("Delete user with valid token")
     public void deleteUserWithValidToken(){
         SerenityRest.given()
-                .headers("Authorization","Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6NTUsIlJvbGUiOiJ1c2VyIiwiZXhwIjoxNjYwNTA3Nzc2fQ.8pPWFTGlqrpq9xEc3v1j4pGP-HgFq-FjgD9bpr3Rajc");
+                .headers("Authorization","Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6NjIsIlJvbGUiOiJ1c2VyIiwiZXhwIjoxNjYwNTEwNzk2fQ.l5NH2frPxHgbLHwqWJA_7em-IF9lyjVt0qGdcX7RNDg");
     }
 
     @Step("Delete user with invalid token")

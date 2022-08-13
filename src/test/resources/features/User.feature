@@ -74,6 +74,11 @@ Feature: User
     And response body should contains code 400 and message "your format phone is wrong"
 
 #    scenario bug
+  Scenario: Delete user with valid bearer token
+    Given Set request delete user with register user
+    When Send request delete user
+    Then API response status code should be 204 no content
+
   Scenario: Delete user with invalid bearer token
     Given Set request delete user invalid token
     When Send request delete user
