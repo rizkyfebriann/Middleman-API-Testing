@@ -37,8 +37,8 @@ public class MiddlemanUserStepDefs {
     public void sendRequestGetUser() {
         SerenityRest.when().get(MiddlemanAPI.GET_USER);
     }
-    @And("Get all projects assert json validation")
-    public void getAllProjectsAssertJsonValidation() {
+    @And("Get user assert json validation")
+    public void getUserAssertJsonValidation() {
         File jsonFileValidUserValidation = new File(MiddlemanAPI.JSON_FILE_USER+"/GetUserValidation.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonFileValidUserValidation));
     }
@@ -52,6 +52,12 @@ public class MiddlemanUserStepDefs {
     public void apiResponseStatusCodeShouldBeUnauthorized(int unauthorized) {
         SerenityRest.then().statusCode(unauthorized);
     }
+//Get User without token
+    @Given("Set request get user without bearer token")
+    public void setRequestGetUserWithoutBearerToken() {
+        middlemanAPI.getUserWithoutToken();
+    }
+
 //Get User Invalid Path
     @Given("Set request get user with invalid path")
     public void setRequestGetUserWithInvalidPath() {
@@ -97,21 +103,21 @@ public class MiddlemanUserStepDefs {
         middlemanAPI.putUserWithvalidToken(jsonFilesValidUser);
     }
 //update user with invalid path
-//    @Given("Set request update user with invalid path")
-//    public void setRequestUpdateUserWithInvalidPath(File json) {
-//        File jsonFilesValidUser = new File( MiddlemanAPI.JSON_FILE_USER+"/UpdateUserWithInvalidPath.json");
-//        middlemanAPI.putUserWithvalidToken(jsonFilesValidUser);
-//    }
-//    @When("Send request update user with invalid path")
-//    public void sendRequestUpdateUserWithInvalidPath() {
-//        SerenityRest.when().put(MiddlemanAPI.PUT_USER_INVALID_PATH);
-//    }
-//
-//    @And("response body should contains message {string}")
-//    public void responseBodyShouldContainsMessage(String message) {
-//        SerenityRest.then()
-//                .body(MiddlemanResponses.MESSAGE,equalTo(message));
-//    }
+    @Given("Set request update user with invalid path")
+    public void setRequestUpdateUserWithInvalidPath() {
+        File jsonFilesValidUser = new File( MiddlemanAPI.JSON_FILE_USER+"/UpdateUserWithInvalidPath.json");
+        middlemanAPI.putUserWithvalidToken(jsonFilesValidUser);
+    }
+    @When("Send request update user with invalid path")
+    public void sendRequestUpdateUserWithInvalidPath() {
+        SerenityRest.when().put(MiddlemanAPI.PUT_USER_INVALID_PATH);
+    }
+
+    @And("response body should contains message {string}")
+    public void responseBodyShouldContainsMessage(String message) {
+        SerenityRest.then()
+                .body(MiddlemanResponses.MESSAGE,equalTo(message));
+    }
 //update user with phone number not valid
     @Given("Set request update user with phone number not valid")
     public void setRequestUpdateUserWithPhoneNumberNotValid() {
@@ -133,7 +139,6 @@ public class MiddlemanUserStepDefs {
     @Then("API response status code should be {int} no content")
     public void apiResponseStatusCodeShouldBeNoContent(int noContent) {
         SerenityRest.then().statusCode(noContent);
-
     }
 
     @Given("Set request delete user invalid token")
@@ -141,8 +146,8 @@ public class MiddlemanUserStepDefs {
         middlemanAPI.deleteUserWithInValidToken();
     }
 
-    @Given("Set request update user with invalid path")
-    public void setRequestUpdateUserWithInvalidPath() {
+    @Given("Set request delete user with invalid path")
+    public void setRequestDeleteUserWithInvalidPath() {
         middlemanAPI.deleteUserWithValidToken();
     }
 
@@ -150,4 +155,5 @@ public class MiddlemanUserStepDefs {
     public void sendRequestDeleteUserInvalidPath() {
         SerenityRest.when().delete(MiddlemanAPI.DELETE_USER_INVALID_PATH);
     }
+
 }

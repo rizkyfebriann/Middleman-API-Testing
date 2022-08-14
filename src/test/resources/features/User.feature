@@ -18,12 +18,22 @@ Feature: User
     Given Set authorization with valid bearer token
     When Send request get user
     Then API response status code should be 200 OK
-    And Get all projects assert json validation
+    And Get user assert json validation
 
   Scenario: Get user with invalid bearer token
     Given Set authorization with invalid bearer token
     When Send request get user
     Then API response status code should be 401 Unauthorized
+
+  Scenario: Get user with invalid bearer token
+    Given Set authorization with invalid bearer token
+    When Send request get user
+    Then API response status code should be 401 Unauthorized
+
+  Scenario: Get user with valid token on invalid path
+    Given Set request get user with invalid path
+    When Send request get user with invalid path
+    Then API response status code should be 404 not found
 
   Scenario: Update user with all valid data on json file
     Given Set request update user with all valid data
@@ -61,11 +71,11 @@ Feature: User
     Then API response status code should be 400 bad request
     And response body should contains code 400 and message "nothing to update data"
 
-#  Scenario: Update user with all valid data on invalid path
-#    Given Set request update user with invalid path
-#    When Send request update user with invalid path
-#    Then API response status code should be 404 not found
-#    And response body should contains message "Not Found"
+  Scenario: Update user with all valid data on invalid path
+    Given Set request update user with invalid path
+    When Send request update user with invalid path
+    Then API response status code should be 404 not found
+    And response body should contains message "Not Found"
 
   Scenario: Update user with phone number not valid
     Given Set request update user with phone number not valid
@@ -85,7 +95,7 @@ Feature: User
     Then API response status code should be 401 Unauthorized
 
   Scenario: Delete user with valid token on invalid path
-    Given Set request update user with invalid path
+    Given Set request delete user with invalid path
     When Send request delete user invalid path
     Then API response status code should be 404 not found
 
