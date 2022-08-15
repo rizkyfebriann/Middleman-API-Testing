@@ -1,6 +1,6 @@
 package Middleman.StepDefs;
 
-import Middleman.API.MiddlemanAPI;
+import Middleman.API.MiddlemanAPI_InOutBounds;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -10,7 +10,7 @@ import net.thucydides.core.annotations.Steps;
 public class MiddlemanInOutBoundsStepDefs {
 
         @Steps
-        MiddlemanAPI middlemanAPI;
+        MiddlemanAPI_InOutBounds middlemanAPI_inOutBounds;
 
         @Given("get all cart on inoutbounds without any authorization")
         public void getAllCartOnInoutboundsWithoutAnyAuthorization() {
@@ -19,32 +19,32 @@ public class MiddlemanInOutBoundsStepDefs {
 
         @When("Send request get all cart on inoutbounds")
         public void sendRequestGetAllCartOnInoutbounds() {
-                SerenityRest.when().get(MiddlemanAPI.GET_ALL_CART_INOUTBOUNDS);
+                SerenityRest.when().get(MiddlemanAPI_InOutBounds.GET_ALL_CART_INOUTBOUNDS);
         }
 
         @Given("get all cart on inoutbounds with authorized rizky user")
         public void getAllCartOnInoutboundsWithAuthorizedRizkyUser() {
-                MiddlemanAPI.getAllCartInoutboundsUser();
+                MiddlemanAPI_InOutBounds.getAllCartInoutboundsUser();
         }
 
         @Given("get all cart on inoutbounds with authorized another rizky user")
         public void getAllCartOnInoutboundsWithAuthorizedAnotherRizkyUser() {
-                MiddlemanAPI.getAllCartInoutboundsUser1();
+                MiddlemanAPI_InOutBounds.getAllCartInoutboundsUser1();
         }
 
         @Given("get all cart on inoutbounds with authorized admin \\(haven't adding product yet)")
         public void getAllCartOnInoutboundsWithAuthorizedAdminHavenTAddingProductYet() {
-                MiddlemanAPI.validTokenAdmins();
+                MiddlemanAPI_InOutBounds.validTokenAdmins();
         }
 
         @Given("get all cart on inoutbounds with authorized admin \\(already added product)")
         public void getAllCartOnInoutboundsWithAuthorizedAdminAlreadyAddedProduct() {
-                MiddlemanAPI.validTokenAdmins();
+                MiddlemanAPI_InOutBounds.validTokenAdmins();
         }
 
         @When("Send request get all cart on inoutbounds on invalid path")
         public void sendRequestGetAllCartOnInoutboundsOnInvalidPath() {
-                SerenityRest.when().get(MiddlemanAPI.GET_ALL_CART_INVALID_INOUTBOUNDS);
+                SerenityRest.when().get(MiddlemanAPI_InOutBounds.GET_ALL_CART_INVALID_INOUTBOUNDS);
         }
 
         @Then("API response status code should be {int} unauthorized")

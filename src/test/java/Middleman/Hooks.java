@@ -1,6 +1,7 @@
 package Middleman;
 
-import Middleman.API.MiddlemanAPI;
+import Middleman.API.MiddlemanAPI_InOutBounds;
+import Middleman.API.MiddlemanAPI_Admins;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.restassured.http.ContentType;
@@ -10,7 +11,7 @@ import net.serenitybdd.rest.SerenityRest;
 
 import java.io.File;
 
-import static Middleman.API.MiddlemanAPI.URL;
+import static Middleman.API.MiddlemanAPI_InOutBounds.URL;
 
 public class Hooks {
     @Before("@loginAdmins")
@@ -21,11 +22,39 @@ public class Hooks {
                 .body(json)
                 .post(URL+"/login");
         JsonPath jsonPath = response.jsonPath();
-        MiddlemanAPI.TOKEN_ADMINS = "Bearer "+ jsonPath.get("data.token");
+        MiddlemanAPI_Admins.TOKEN_ADMINS = "Bearer "+ jsonPath.get("data.token");
     }
+
     @Before("@InvalidToken")
     public void invalidToken(){
-        MiddlemanAPI.TOKEN_ADMINS = "Bearer invalid1234567io";
+        MiddlemanAPI_Admins.TOKEN_ADMINS = "Bearer invalid1234567io";
+    }
+
+    @Before("@loginRizkyUser")
+    public void loginRizkyUser(){
+        File json = new File("src/test/resources/JSONFile/Login/ValidLoginUser.json");
+        Response response= SerenityRest.given()
+                .contentType(ContentType.JSON)
+                .body(json)
+                .post(URL+"/login");
+        JsonPath jsonPath = response.jsonPath();
+        MiddlemanAPI_InOutBounds.TOKEN_RIZKYUSER = jsonPath.get("data.token");
+    }
+
+    @Before("@loginRizkyUser1")
+    public void loginRizkyUser1(){
+        File json = new File("src/test/resources/JSONFile/Login/ValidLoginUser2.json");
+        Response response= SerenityRest.given()
+                .contentType(ContentType.JSON)
+                .body(json)
+                .post(URL+"/login");
+        JsonPath jsonPath = response.jsonPath();
+        MiddlemanAPI_InOutBounds.TOKEN_RIZKYUSER = jsonPath.get("data.token");
+    }
+
+    @After("@loginRizkyUser")
+    public void reset_token_rizkyUser(){
+        MiddlemanAPI_InOutBounds.TOKEN_RIZKYUSER = "";
     }
 
     @Before("@loginRizkyUser")
@@ -57,6 +86,6 @@ public class Hooks {
 
     @After("@loginAdmins")
     public void reset_token_admins(){
-        MiddlemanAPI.TOKEN_ADMINS = "x";
+        MiddlemanAPI_Admins.TOKEN_ADMINS = "x";
     }
 }

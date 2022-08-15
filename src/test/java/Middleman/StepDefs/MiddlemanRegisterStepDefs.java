@@ -1,6 +1,6 @@
 package Middleman.StepDefs;
 
-import Middleman.API.MiddlemanAPI;
+import Middleman.API.MiddlemanAPI_Register;
 import Middleman.Responses.MiddlemanResponses;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -16,17 +16,17 @@ import static org.hamcrest.Matchers.equalTo;
 public class MiddlemanRegisterStepDefs {
 
     @Steps
-    MiddlemanAPI middlemanAPI;
+    MiddlemanAPI_Register middlemanAPIregister;
 
     @Given("Post register user with valid json file")
     public void postRegisterUserWithValidJsonFile() {
-        File jsonFilesRegisterValidUser = new File( MiddlemanAPI.JSON_FILE_REGISTER+"/RegisterNewValidUser.json");
-        middlemanAPI.postRegisterUser(jsonFilesRegisterValidUser);
+        File jsonFilesRegisterValidUser = new File( MiddlemanAPI_Register.JSON_FILE_REGISTER+"/RegisterNewValidUser.json");
+        middlemanAPIregister.postRegisterUser(jsonFilesRegisterValidUser);
     }
 
     @When("Send request post register user")
     public void sendRequestPostRegisterUser() {
-        SerenityRest.when().post(MiddlemanAPI.POST_REGISTER_USER);
+        SerenityRest.when().post(MiddlemanAPI_Register.POST_REGISTER_USER);
     }
 
     @Then("API response status code should be {int} created")
@@ -44,38 +44,38 @@ public class MiddlemanRegisterStepDefs {
 
     @Given("Post register user with invalid json file")
     public void postRegisterUserWithInvalidJsonFile() {
-        File jsonFilesInvalidRegisterUser1 = new File( MiddlemanAPI.JSON_FILE_REGISTER+"/RegisterNewUserWithoutName.json");
-        middlemanAPI.postLoginUserOrAdmin(jsonFilesInvalidRegisterUser1);
-        File jsonFilesInvalidRegisterUser2 = new File( MiddlemanAPI.JSON_FILE_REGISTER+"/RegisterNewUserWithoutEmail.json");
-        middlemanAPI.postLoginUserOrAdmin(jsonFilesInvalidRegisterUser2);
-        File jsonFilesInvalidRegisterUser3 = new File( MiddlemanAPI.JSON_FILE_REGISTER+"/RegisterNewUserWithoutPassword.json");
-        middlemanAPI.postLoginUserOrAdmin(jsonFilesInvalidRegisterUser3);
-        File jsonFilesInvalidRegisterUser4 = new File( MiddlemanAPI.JSON_FILE_REGISTER+"/RegisterNewUserWithoutPhone.json");
-        middlemanAPI.postLoginUserOrAdmin(jsonFilesInvalidRegisterUser4);
-        File jsonFilesInvalidRegisterUser5 = new File( MiddlemanAPI.JSON_FILE_REGISTER+"/RegisterNewUserWithoutAddress.json");
-        middlemanAPI.postLoginUserOrAdmin(jsonFilesInvalidRegisterUser5);
+        File jsonFilesInvalidRegisterUser1 = new File( MiddlemanAPI_Register.JSON_FILE_REGISTER+"/RegisterNewUserWithoutName.json");
+        middlemanAPIregister.postRegisterUser(jsonFilesInvalidRegisterUser1);
+        File jsonFilesInvalidRegisterUser2 = new File( MiddlemanAPI_Register.JSON_FILE_REGISTER+"/RegisterNewUserWithoutEmail.json");
+        middlemanAPIregister.postRegisterUser(jsonFilesInvalidRegisterUser2);
+        File jsonFilesInvalidRegisterUser3 = new File( MiddlemanAPI_Register.JSON_FILE_REGISTER+"/RegisterNewUserWithoutPassword.json");
+        middlemanAPIregister.postRegisterUser(jsonFilesInvalidRegisterUser3);
+        File jsonFilesInvalidRegisterUser4 = new File( MiddlemanAPI_Register.JSON_FILE_REGISTER+"/RegisterNewUserWithoutPhone.json");
+        middlemanAPIregister.postRegisterUser(jsonFilesInvalidRegisterUser4);
+        File jsonFilesInvalidRegisterUser5 = new File( MiddlemanAPI_Register.JSON_FILE_REGISTER+"/RegisterNewUserWithoutAddress.json");
+        middlemanAPIregister.postRegisterUser(jsonFilesInvalidRegisterUser5);
     }
 
     @Given("Post register user already registered with valid json file")
     public void postRegisterUserAlreadyRegisteredWithValidJsonFile() {
-        File jsonFilesRegisteredValidUser = new File( MiddlemanAPI.JSON_FILE_REGISTER+"/RegisterNewValidUser.json");
-        middlemanAPI.postRegisterUser(jsonFilesRegisteredValidUser);
+        File jsonFilesRegisteredValidUser = new File( MiddlemanAPI_Register.JSON_FILE_REGISTER+"/RegisterNewValidUser.json");
+        middlemanAPIregister.postRegisterUser(jsonFilesRegisteredValidUser);
     }
 
     @Given("Post register user with invalid format email on valid json file")
     public void postRegisterUserWithEmailNotValidOhValidJsonFile() {
-        File jsonFilesRegisterUserInvalidEmail = new File( MiddlemanAPI.JSON_FILE_REGISTER+"/RegisterNewUserWithInvalidFormatEmail.json");
-        middlemanAPI.postRegisterUser(jsonFilesRegisterUserInvalidEmail);
+        File jsonFilesRegisterUserInvalidEmail = new File( MiddlemanAPI_Register.JSON_FILE_REGISTER+"/RegisterNewUserWithInvalidFormatEmail.json");
+        middlemanAPIregister.postRegisterUser(jsonFilesRegisterUserInvalidEmail);
     }
 
     @Given("Post register user with invalid phone on valid json file")
     public void postRegisterUserWithInvalidPhoneOnValidJsonFile() {
-        File jsonFilesRegisterUserInvalidPhone = new File( MiddlemanAPI.JSON_FILE_REGISTER+"/RegisterNewUserWithInvalidPhone.json");
-        middlemanAPI.postRegisterUser(jsonFilesRegisterUserInvalidPhone);
+        File jsonFilesRegisterUserInvalidPhone = new File( MiddlemanAPI_Register.JSON_FILE_REGISTER+"/RegisterNewUserWithInvalidPhone.json");
+        middlemanAPIregister.postRegisterUser(jsonFilesRegisterUserInvalidPhone);
     }
 
     @When("Send request post register user on invalid path")
     public void sendRequestPostRegisterUserOnInvalidPath() {
-        SerenityRest.when().post(MiddlemanAPI.POST_REGISTERINVALID_USER);
+        SerenityRest.when().post(MiddlemanAPI_Register.POST_REGISTERINVALID_USER);
     }
 }
