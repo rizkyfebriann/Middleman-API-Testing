@@ -13,6 +13,8 @@ public class MiddlemanAPI_Admins {
     public static final String DIR = System.getProperty("user.dir");
     public static final String JSON_FILE_ADMINS = DIR+"/src/test/resources/JSONFile/Admins";
 
+    public static String IMAGE_FOLDER = DIR + "/src/test/resources/Image";
+
     public static String TOKEN_ADMINS = "";
     public static String TOKEN_ADMINS_INVALID = "";
     public static String GET_ALL_PRODUCT_ADMINS = URL+"/admins";
@@ -34,7 +36,7 @@ public class MiddlemanAPI_Admins {
         JsonPath jsonPath = new JsonPath(json);
         SerenityRest.given()
                 .header("Authorization", TOKEN_ADMINS)
-                .multiPart("product_image", new File("/Users/nabilahpermata/AUTOMATION_QA5/Testing-API-Capstone/src/test/resources/image/Beras Jago.jpeg"))
+                .multiPart("product_image", new File(IMAGE_FOLDER + "/Beras Jago.jpeg"))
                 .formParam("product_name",jsonPath.get("product_name").toString())
                 .formParam("stock",jsonPath.get("stock").toString())
                 .formParam("unit",jsonPath.get("unit").toString())
@@ -45,7 +47,7 @@ public class MiddlemanAPI_Admins {
         JsonPath jsonPath = new JsonPath(json);
         SerenityRest.given()
                 .header("Authorization", TOKEN_ADMINS)
-                .multiPart("product_image", new File("/Users/nabilahpermata/AUTOMATION_QA5/Testing-API-Capstone/src/test/resources/image/beras-koi.jpeg"))
+                .multiPart("product_image", new File(IMAGE_FOLDER + "/beras-koi.jpeg"))
                 .formParam("product_name",jsonPath.get("product_name").toString())
                 .formParam("stock",jsonPath.get("stock").toString())
                 .formParam("unit",jsonPath.get("unit").toString())
@@ -57,7 +59,7 @@ public class MiddlemanAPI_Admins {
         JsonPath jsonPath = new JsonPath(json);
         SerenityRest.given()
                 .header("Authorization", TOKEN_ADMINS)
-                .multiPart("product_image", new File("/Users/nabilahpermata/AUTOMATION_QA5/Testing-API-Capstone/src/test/resources/image/beras-koi.jpeg"))
+                .multiPart("product_image", new File(IMAGE_FOLDER + "/beras-koi.jpeg"))
                 .formParam("unit", jsonPath.get("unit").toString())
                 .formParam("price", jsonPath.get("price").toString());
     }

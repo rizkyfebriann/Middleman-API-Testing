@@ -32,7 +32,7 @@ public class MiddlemanAPI_InOutBounds {
     @Step("Valid token admin")
     public static void validTokenAdmins() {
         SerenityRest.given()
-                .headers("Authorization", "Bearer " + );
+                .headers("Authorization", "Bearer ");
     }
 
 
