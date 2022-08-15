@@ -40,7 +40,7 @@ public class MiddlemanAPI {
     //public static final String JSON_FILE_LOGIN_USER2 = DIR+"/src/test/resources/JSONFile/User";
 
     public static String TOKEN_ADMINS = "";
-    public static String TOKEN_ADMINS_INVALID ="";
+    public static String TOKEN_ADMINS_INVALID = "";
     public static String GET_ALL_PRODUCT_ADMINS = URL+"/admins";
     public static String GET_INVALIDPATH_ADMINS = URL+"/adminssss";
     public static String POST_CREATE_ADMINS = URL+"/admins";
@@ -48,14 +48,11 @@ public class MiddlemanAPI {
     public static String DELETE_PRODUCT_ADMINS = URL+"/admins/{id}";
     public static String DELETE_INVALIDPATH_ADMINS = URL+"/adminss/{id}";
 
+    public static String TOKEN_RIZKYUSER = "";
+    public static String TOKEN_RIZKYUSER1 = "";
+    public static String GET_ALL_CART_INOUTBOUNDS = URL+"/inoutbounds";
 
-//    public String bearer_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6MiwiUm9sZSI6InVzZXIiLCJleHAiOjE2NjAzMjQxMjR9.kOYiRZO8OQXfNERZGtfwcC_g0Jyzlfdg9MBQ27V-Zn8";
-//
-//    public void apply(RequestTemplate requestTemplate) {
-//
-//        requestTemplate.header(AUTHORIZATION_HEADER, getBearerTokenHeader());
-//
-//    }
+    public static String GET_ALL_CART_INVALID_INOUTBOUNDS = URL+"/inoutbound";
 
     @Step("Post login user or admin")
     public void postLoginUserOrAdmin(File json){
@@ -70,6 +67,30 @@ public class MiddlemanAPI {
                 .contentType(ContentType.JSON)
                 .body(json);
     }
+
+    @Step("Get all carts on inoutbounds")
+    public static void getAllCartInoutboundsUser() {
+        SerenityRest.given()
+                .headers("Authorization", "Bearer " + TOKEN_RIZKYUSER);
+    }
+
+    @Step("Get all carts on inoutbounds")
+    public static void getAllCartInoutboundsUser1() {
+        SerenityRest.given()
+                .headers("Authorization", "Bearer " + TOKEN_RIZKYUSER1);
+    }
+
+//    @Step("Invalid token admin")
+//    public static void invalidTokenAdmins() {
+//        SerenityRest.given()
+//                .headers("Authorization", "Bearer " + TOKEN_ADMINS_INVALID);
+//    }
+    @Step("Valid token admin")
+    public static void validTokenAdmins() {
+        SerenityRest.given()
+                .headers("Authorization", "Bearer " + TOKEN_ADMINS);
+    }
+
     @Step("Get all product admins")
     public static void getAllProductAdmins(File json) {
         SerenityRest.given()
