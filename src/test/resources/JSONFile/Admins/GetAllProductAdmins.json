@@ -1,0 +1,86 @@
+{
+  "code": 200,
+  "data": [
+    {
+      "ID": 3,
+      "IdAdmin": 10,
+      "Name": "gula nol",
+      "Unit": "kg",
+      "Stock": 80,
+      "Price": 9200,
+      "Image": "https://heribucketbe10.s3.amazonaws.com/2022-08-1115%3A44%3A21-s3.jpg",
+      "CreatedAt": "2022-08-11T07:30:37.776Z"
+    },
+    {
+      "ID": 4,
+      "IdAdmin": 10,
+      "Name": "gula nol",
+      "Unit": "kg",
+      "Stock": 80,
+      "Price": 9200,
+      "Image": "https://heribucketbe10.s3.amazonaws.com/2022-08-1115%3A44%3A33-s3.jpg",
+      "CreatedAt": "2022-08-11T07:41:43.25Z"
+    },
+    {
+      "ID": 5,
+      "IdAdmin": 10,
+      "Name": "gula nol",
+      "Unit": "kg",
+      "Stock": 80,
+      "Price": 9200,
+      "Image": "https://heribucketbe10.s3.amazonaws.com/2022-08-1115%3A44%3A38-s3.jpg",
+      "CreatedAt": "2022-08-11T08:26:44.875Z"
+    },
+    {
+      "ID": 6,
+      "IdAdmin": 10,
+      "Name": "gula nol",
+      "Unit": "kg",
+      "Stock": 80,
+      "Price": 9200,
+      "Image": "https://heribucketbe10.s3.amazonaws.com/2022-08-1115%3A44%3A43-s3.jpg",
+      "CreatedAt": "2022-08-11T14:05:24.705Z"
+    },
+    {
+      "ID": 7,
+      "IdAdmin": 11,
+      "Name": "gula nol",
+      "Unit": "kg",
+      "Stock": 80,
+      "Price": 9200,
+      "Image": "https://heribucketbe10.s3.amazonaws.com/2022-08-1115%3A44%3A51-s3.jpg",
+      "CreatedAt": "2022-08-11T15:25:58.852Z"
+    },
+    {
+      "ID": 8,
+      "IdAdmin": 11,
+      "Name": "gulali",
+      "Unit": "kg",
+      "Stock": 80,
+      "Price": 9200,
+      "Image": "https://heribucketbe10.s3.amazonaws.com/2022-08-1115%3A27%3A01-s3.jpg",
+      "CreatedAt": "2022-08-11T15:27:02.727Z"
+    },
+    {
+      "ID": 9,
+      "IdAdmin": 11,
+      "Name": "guleeee",
+      "Unit": "kg",
+      "Stock": 800,
+      "Price": 9000,
+      "Image": "https://heribucketbe10.s3.amazonaws.com/2022-08-1115%3A32%3A00-s3.jpg",
+      "CreatedAt": "2022-08-11T15:32:01.225Z"
+    },
+    {
+      "ID": 10,
+      "IdAdmin": 10,
+      "Name": "beras maknyus",
+      "Unit": "kg",
+      "Stock": 5,
+      "Price": 13000,
+      "Image": "https://heribucketbe10.s3.amazonaws.com/2022-08-1201%3A30%3A14-s3.jpeg",
+      "CreatedAt": "2022-08-12T01:30:15.248Z"
+    }
+  ],
+  "message": "get data success"
+}
