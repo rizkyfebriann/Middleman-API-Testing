@@ -1,0 +1,334 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "integer"
+    },
+    "data": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "ID": {
+              "type": "integer"
+            },
+            "IdAdmin": {
+              "type": "integer"
+            },
+            "Name": {
+              "type": "string"
+            },
+            "Unit": {
+              "type": "string"
+            },
+            "Stock": {
+              "type": "integer"
+            },
+            "Price": {
+              "type": "integer"
+            },
+            "Image": {
+              "type": "string"
+            },
+            "CreatedAt": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "ID",
+            "IdAdmin",
+            "Name",
+            "Unit",
+            "Stock",
+            "Price",
+            "Image",
+            "CreatedAt"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "ID": {
+              "type": "integer"
+            },
+            "IdAdmin": {
+              "type": "integer"
+            },
+            "Name": {
+              "type": "string"
+            },
+            "Unit": {
+              "type": "string"
+            },
+            "Stock": {
+              "type": "integer"
+            },
+            "Price": {
+              "type": "integer"
+            },
+            "Image": {
+              "type": "string"
+            },
+            "CreatedAt": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "ID",
+            "IdAdmin",
+            "Name",
+            "Unit",
+            "Stock",
+            "Price",
+            "Image",
+            "CreatedAt"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "ID": {
+              "type": "integer"
+            },
+            "IdAdmin": {
+              "type": "integer"
+            },
+            "Name": {
+              "type": "string"
+            },
+            "Unit": {
+              "type": "string"
+            },
+            "Stock": {
+              "type": "integer"
+            },
+            "Price": {
+              "type": "integer"
+            },
+            "Image": {
+              "type": "string"
+            },
+            "CreatedAt": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "ID",
+            "IdAdmin",
+            "Name",
+            "Unit",
+            "Stock",
+            "Price",
+            "Image",
+            "CreatedAt"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "ID": {
+              "type": "integer"
+            },
+            "IdAdmin": {
+              "type": "integer"
+            },
+            "Name": {
+              "type": "string"
+            },
+            "Unit": {
+              "type": "string"
+            },
+            "Stock": {
+              "type": "integer"
+            },
+            "Price": {
+              "type": "integer"
+            },
+            "Image": {
+              "type": "string"
+            },
+            "CreatedAt": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "ID",
+            "IdAdmin",
+            "Name",
+            "Unit",
+            "Stock",
+            "Price",
+            "Image",
+            "CreatedAt"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "ID": {
+              "type": "integer"
+            },
+            "IdAdmin": {
+              "type": "integer"
+            },
+            "Name": {
+              "type": "string"
+            },
+            "Unit": {
+              "type": "string"
+            },
+            "Stock": {
+              "type": "integer"
+            },
+            "Price": {
+              "type": "integer"
+            },
+            "Image": {
+              "type": "string"
+            },
+            "CreatedAt": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "ID",
+            "IdAdmin",
+            "Name",
+            "Unit",
+            "Stock",
+            "Price",
+            "Image",
+            "CreatedAt"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "ID": {
+              "type": "integer"
+            },
+            "IdAdmin": {
+              "type": "integer"
+            },
+            "Name": {
+              "type": "string"
+            },
+            "Unit": {
+              "type": "string"
+            },
+            "Stock": {
+              "type": "integer"
+            },
+            "Price": {
+              "type": "integer"
+            },
+            "Image": {
+              "type": "string"
+            },
+            "CreatedAt": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "ID",
+            "IdAdmin",
+            "Name",
+            "Unit",
+            "Stock",
+            "Price",
+            "Image",
+            "CreatedAt"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "ID": {
+              "type": "integer"
+            },
+            "IdAdmin": {
+              "type": "integer"
+            },
+            "Name": {
+              "type": "string"
+            },
+            "Unit": {
+              "type": "string"
+            },
+            "Stock": {
+              "type": "integer"
+            },
+            "Price": {
+              "type": "integer"
+            },
+            "Image": {
+              "type": "string"
+            },
+            "CreatedAt": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "ID",
+            "IdAdmin",
+            "Name",
+            "Unit",
+            "Stock",
+            "Price",
+            "Image",
+            "CreatedAt"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "ID": {
+              "type": "integer"
+            },
+            "IdAdmin": {
+              "type": "integer"
+            },
+            "Name": {
+              "type": "string"
+            },
+            "Unit": {
+              "type": "string"
+            },
+            "Stock": {
+              "type": "integer"
+            },
+            "Price": {
+              "type": "integer"
+            },
+            "Image": {
+              "type": "string"
+            },
+            "CreatedAt": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "ID",
+            "IdAdmin",
+            "Name",
+            "Unit",
+            "Stock",
+            "Price",
+            "Image",
+            "CreatedAt"
+          ]
+        }
+      ]
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "code",
+    "data",
+    "message"
+  ]
+}
