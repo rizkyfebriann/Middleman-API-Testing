@@ -2,14 +2,14 @@ Feature: Admins
 
   @Admins @Positive
   Scenario: Get all product admins with valid data
-    Given Get all product admins with valid json file
+    Given Get all product admins with valid path "/products"
     When Send request get all product admins
     Then Status code should be 200 OK
     And Get all product admins assert json validation
 
   @Admins @Negative
-  Scenario: Get all product admins with invalid path
-    Given Get all product admins with valid json file
+  Scenario: Get all product admins invalid path
+    Given Get all product admins with invalid path "/productsss"
     When Send request get all product admins with invalid path
     Then Status code should be 404 not found
 
