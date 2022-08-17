@@ -118,7 +118,7 @@ Feature: Cart
     Then API response status code should be 404 not found
 
   @user @loginErnaUser
-  Scenario: Delete qty product on cart with invalid path
+  Scenario: Delete qty product on cart with invalid endpoint
     Given Delete qty in cart with product id "6" on invalid path
     When Send request delete product on cart with invalid path
     Then API response status code should be 404 not found
