@@ -13,8 +13,7 @@ import java.io.File;
 
 import static Middleman.API.MiddlemanAPI_InOutBounds.URL;
 
-public class HooksLogin02 {
-
+public class HooksLogin2 {
 
     @Before("@loginAdmins")
     public void login_admins(){
@@ -31,7 +30,6 @@ public class HooksLogin02 {
     public void invalidToken(){
         MiddlemanAPI_Admins.TOKEN_ADMINS = "Bearer invalid1234567io";
     }
-
 
     @After
     public void reset_token_admins(){

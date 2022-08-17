@@ -38,16 +38,14 @@ public class MiddlemanAdminsStepDefs {
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonFile));
     }
 
-
     @When("Send request get all product admins with invalid path")
     public void sendRequestGetAllProductAdminsWithInvalidPath() {
         SerenityRest.when().post(MiddlemanAPI_Admins.GET_INVALIDPATH_ADMINS);
-    } @Given("Get search product admins with valid product name")
+    }
 
-
-    public void getSearchProductAdminsWithValidProductName() {
-        File jsonFiles = new File( MiddlemanAPI_Admins.JSON_FILE_ADMINS+"/GetSearchProductAdminsValidProductName.json");
-        middlemanAPIadmins.getSearchProductAdmins(jsonFiles);
+    @Given("Get search product admins with parameter product name {string}")
+    public void getSearchProductAdminsWithParameterProductName(String productname) {
+        middlemanAPIadmins.getSearchProductAdmins(productname);
     }
 
     @When("Send request get search with valid product name")
@@ -61,11 +59,9 @@ public class MiddlemanAdminsStepDefs {
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonFile));
     }
 
-    @Given("Get search product admins with one alphabet contains from product name")
-    public void getSearchProductAdminsWithOneAlphabetContainsFromProductName() {
-        File jsonFiles = new File( MiddlemanAPI_Admins.JSON_FILE_ADMINS+"/GetSearchProductAdminsValidProductName.json");
-        middlemanAPIadmins.getSearchProductAdmins(jsonFiles);
-
+    @Given("Get search product admins with one alphabet contains from product name {string}")
+    public void getSearchProductAdminsWithOneAlphabetContainsFromProductName(String productname) {
+        middlemanAPIadmins.getSearchProductAdmins(productname);
     }
 
     @When("Send request get search with one alphabet contains from product name")
@@ -73,11 +69,9 @@ public class MiddlemanAdminsStepDefs {
         SerenityRest.when().get(MiddlemanAPI_Admins.GET_SEARCH_PRODUCT_ADMINS_ONEKEYWORD );
     }
 
-    @Given("Get search product with two alphabet contains from product name")
-    public void getSearchProductWithTwoAlphabetContainsFromProductName() {
-        File jsonFiles = new File( MiddlemanAPI_Admins.JSON_FILE_ADMINS+"/GetSearchProductAdminsValidProductName.json");
-        middlemanAPIadmins.getSearchProductAdmins(jsonFiles);
-
+    @Given("Get search product admins with two alphabet contains from product name {string}")
+    public void getSearchProductAdminsWithTwoAlphabetContainsFromProductName(String productname) {
+        middlemanAPIadmins.getSearchProductAdmins(productname);
     }
 
     @When("Send request get search with two alphabet contains from product name")
@@ -85,11 +79,9 @@ public class MiddlemanAdminsStepDefs {
         SerenityRest.when().get(MiddlemanAPI_Admins.GET_SEARCH_PRODUCT_ADMINS_TWOKEYWORD);
     }
 
-    @Given("Get search product admins with invalid keyword value")
-    public void getSearchProductAdminsWithInvalidKeywordValue() {
-        File jsonFiles = new File( MiddlemanAPI_Admins.JSON_FILE_ADMINS+"/GetSearchProductAdminsValidProductName.json");
-        middlemanAPIadmins.getSearchProductAdmins(jsonFiles);
-
+    @Given("Get search product admins with invalid keyword value {string}")
+    public void getSearchProductAdminsWithInvalidKeywordValue(String productname) {
+        middlemanAPIadmins.getSearchProductAdmins(productname);
     }
 
     @When("Send request get search with invalid keyword")
@@ -97,10 +89,9 @@ public class MiddlemanAdminsStepDefs {
         SerenityRest.when().get(MiddlemanAPI_Admins.GET_SEARCH_PRODUCT_ADMINS_INVALIDKEYWORD);
     }
 
-    @Given("Get search product admins with invalid path param")
-    public void getSearchProductAdminsWithInvalidPathParam() {
-        File jsonFiles = new File( MiddlemanAPI_Admins.JSON_FILE_ADMINS+"/GetSearchProductAdminsValidProductName.json");
-        middlemanAPIadmins.getSearchProductAdmins(jsonFiles);
+    @Given("Get search product admins with invalid path param {string}")
+    public void getSearchProductAdminsWithInvalidPathParam(String productname) {
+        middlemanAPIadmins.getSearchProductAdmins(productname);
     }
 
     @When("Send request get search with invalid path param")
@@ -108,12 +99,10 @@ public class MiddlemanAdminsStepDefs {
         SerenityRest.when().get(MiddlemanAPI_Admins.GET_SEARCH_PRODUCT_ADMINS_INVALIDPATH);
     }
 
-
     @Then("Status code should be {int} not found")
     public void statusCodeShouldBeNotFound(int not_found) {
         SerenityRest.then().statusCode(not_found);
     }
-
 
     @Then("Status code should be {int} bad request")
     public void statusCodeShouldBeBadRequest(int bad_request) {
@@ -129,7 +118,6 @@ public class MiddlemanAdminsStepDefs {
     @When("Send request post create a new product admins")
     public void sendRequestPostCreateANewProductAdmins() {
         SerenityRest.when().post(MiddlemanAPI_Admins.POST_CREATE_ADMINS);
-
     }
 
     @Then("Status code should be {int} created")
@@ -168,14 +156,12 @@ public class MiddlemanAdminsStepDefs {
     @When("Send request put update admins")
     public void sendRequestPutUpdateAdmins() {
         SerenityRest.when().put(MiddlemanAPI_Admins.PUT_UPDATE_ADMINS);
-
     }
 
     @When("Send put update product admins without product name and stock on json file")
     public void sendPutUpdateProductAdminsWithoutProductNameAndStockOnJsonFile() {
         File jsonFiles = new File( MiddlemanAPI_Admins.JSON_FILE_ADMINS+"/PutUpdateProductAdminsWithoutNameAndStock.json");
         middlemanAPIadmins.putUpdateProductAdminsWithoutNameAndStock(jsonFiles);
-
     }
 
     @When("Send put update product admins without product unit and price on json file")
@@ -231,6 +217,5 @@ public class MiddlemanAdminsStepDefs {
     public void sendPutUpdateProductAdminsWithEmptyDataOnJsonFile() {
         File jsonFiles = new File( MiddlemanAPI_Admins.JSON_FILE_ADMINS+"/PutUpdateProductAdminsWithoutProductImage.json");
         middlemanAPIadmins.putUpdateProductAdminsWithEmptyData(jsonFiles);
-
     }
 }

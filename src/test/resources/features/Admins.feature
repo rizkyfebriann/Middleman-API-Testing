@@ -15,35 +15,35 @@ Feature: Admins
 
   @Admins @Positive
   Scenario: Get search product admins with valid product name
-    Given Get search product admins with valid product name
+    Given Get search product admins with parameter product name "tepung"
     When Send request get search with valid product name
     Then Status code should be 200 OK
     And Get all search product admins assert json validation
 
   @Admins @Positive
   Scenario: Get search product with one alphabet contains from product name
-    Given Get search product admins with one alphabet contains from product name
+    Given Get search product admins with one alphabet contains from product name "b"
     When Send request get search with one alphabet contains from product name
     Then Status code should be 200 OK
     And Get all search product admins assert json validation
 
   @Admins @Positive
   Scenario: Get search product with two alphabet contains from product name
-    Given Get search product with two alphabet contains from product name
+    Given Get search product admins with two alphabet contains from product name "te"
     When Send request get search with two alphabet contains from product name
     Then Status code should be 200 OK
     And Get all search product admins assert json validation
 
   @Admins @Negative
-  Scenario: Get search product admins with invalid keyword value
-    Given Get search product admins with invalid keyword value
+  Scenario: Get search product with invalid keyword value
+    Given Get search product admins with invalid keyword value "XXXXXX"
     When Send request get search with invalid keyword
     Then Status code should be 200 OK
     And Get all search product admins assert json validation
 
   @Admins @Negative
-  Scenario: Get search product admins with invalid path param
-    Given Get search product admins with invalid path param
+  Scenario: Get search product with invalid path param
+    Given Get search product admins with invalid path param "/productssss"
     When Send request get search with invalid path param
     Then Status code should be 404 not found
 
@@ -133,25 +133,25 @@ Feature: Admins
 
   @Admins @Positive @loginAdmins
   Scenario: Delete product admins with valid id
-    When Delete comments with id 11
+    When Delete comments with id 13
     When Send request delete comments
     Then Status code should be 204 No content
 
   @Admins @Negative @loginAdmins
   Scenario: Delete product admins with invalid path
-    When Delete comments with id 10
+    When Delete comments with id 13
     When Send request delete comments with invalid path
     Then Status code should be 404 not found
 
   @Admins @Negative @InvalidToken
   Scenario: Delete product admins with invalid bearer token
-    When Delete comments with id 10
+    When Delete comments with id 13
     When Send request delete comments
     Then Status code should be 401 unauthorized
 
   @Admins @Negative
   Scenario: Delete product admins without bearer token
-    When Delete comments with id 11
+    When Delete comments with id 13
     When Send request delete comments
     Then Status code should be 400 bad request
 

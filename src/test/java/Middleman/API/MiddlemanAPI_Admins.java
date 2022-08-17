@@ -23,10 +23,11 @@ public class MiddlemanAPI_Admins {
     public static String DELETE_PRODUCT_ADMINS = URL+"/admins/products/{id}";
     public static String DELETE_INVALIDPATH_ADMINS = URL+"/adminss/products/{id}";
     public static String GET_SEARCH_PRODUCT_ADMINS_VALIDNAME = URL+"/admins/products/search?productname=tepung";
-    public static String GET_SEARCH_PRODUCT_ADMINS_ONEKEYWORD = URL+"/admins/products/search?productname=t";
-    public static String GET_SEARCH_PRODUCT_ADMINS_TWOKEYWORD = URL+"/admins/products/search?productname=t";
+    public static String GET_SEARCH_PRODUCT_ADMINS_ONEKEYWORD = URL+"/admins/products/search?productname=b";
+    public static String GET_SEARCH_PRODUCT_ADMINS_TWOKEYWORD = URL+"/admins/products/search?productname=tt";
     public static String GET_SEARCH_PRODUCT_ADMINS_INVALIDKEYWORD = URL+"/admins/products/search?productname=XXXXXX";
     public static String GET_SEARCH_PRODUCT_ADMINS_INVALIDPATH = URL+"/admins/productssss/search?productname=tepung";
+
     @Step("Get all product admins")
     public static void getAllProductAdmins(File json) {
         SerenityRest.given()
@@ -35,10 +36,9 @@ public class MiddlemanAPI_Admins {
 
     }
     @Step("Get search product admins")
-    public static void getSearchProductAdmins(File json) {
+    public static void getSearchProductAdmins(String productname) {
         SerenityRest.given()
-                .contentType(ContentType.JSON);
-                //.body(json);
+                .queryParam("productname",productname);
     }
 
     @Step("Post create product admins")
