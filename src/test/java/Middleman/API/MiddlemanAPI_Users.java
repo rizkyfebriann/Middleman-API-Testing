@@ -11,7 +11,6 @@ import net.thucydides.core.annotations.Step;
 public class MiddlemanAPI_Users {
 
     public static final String JSON_FILE_USER = Constant.DIR + "/src/test/resources/JSONFile/User";
-    public static final String TOKEN_ERNAUSER2 = "";
 //    public static final String JSON_FILE_USER_PRODUCT = DIR+"/src/test/resources/JSONFile/User_Product";
     public static String TOKEN_ERNAUSER = "";
     public static String GET_USER = Constant.URL+"/users";

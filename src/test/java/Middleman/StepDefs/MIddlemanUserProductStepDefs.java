@@ -69,7 +69,7 @@ public class MIddlemanUserProductStepDefs {
     @Given("Create product user with invalid token")
     public void createProductUserWithInvalidToken() {
         File jsonFiles = new File(MiddlemanAPI_UserProduct.JSON_FILE_USER_PRODUCT + "/CreateProductUserWithAllValidData.json");
-        middlemanAPIUserProduct.postProductUserWithInvalidToken(jsonFiles);
+        middlemanAPIUserProduct.postProductUserWithValidToken(jsonFiles);
     }
 
     @Given("Create product user with price not valid")

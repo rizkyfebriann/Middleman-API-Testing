@@ -23,7 +23,6 @@ public class MiddlemanAPI_UserProduct {
     public static String DELETE_USER_PRODUCT = Constant.URL+"/users/products/{id}";
     public static String DELETE_USER_PRODUCT_INVALID_PATH = Constant.URL+"/users/productsss/{id}";
 
-    MiddlemanAPI_Users middlemanAPI_users;
 
     @Step("Get product user with valid token")
     public void getProductUserWithValidToken() {
@@ -58,36 +57,36 @@ public class MiddlemanAPI_UserProduct {
     public static void postProductUserWithEmptyToken(File json) {
         JsonPath jsonPath = new JsonPath(json);
         SerenityRest.given()
-                .headers("Authorization", TOKEN_ERNAUSER)
-                .multiPart("product_image", new File(IMAGE_FOLDER + "gula_tebu.jpeg"))
-                .formParam("product_name",jsonPath.get("product_name").toString())
-                .formParam("unit",jsonPath.get("unit").toString())
-                .formParam("stock",jsonPath.get("stock").toString())
-                .formParam("price",jsonPath.get("price").toString());
-    }
-
-    @Step("Post product user with invalid token")
-    public static void postProductUserWithInvalidToken(File json) {
-        JsonPath jsonPath = new JsonPath(json);
-        SerenityRest.given()
-                .headers("Authorization", TOKEN_ERNAUSER)
+//                .headers("Authorization", TOKEN_ERNAUSER)
                 .multiPart("product_image", new File(IMAGE_FOLDER + "/gula_tebu.jpeg"))
                 .formParam("product_name",jsonPath.get("product_name").toString())
                 .formParam("unit",jsonPath.get("unit").toString())
                 .formParam("stock",jsonPath.get("stock").toString())
                 .formParam("price",jsonPath.get("price").toString());
     }
+
+//    @Step("Post product user with invalid token")
+//    public static void postProductUserWithInvalidToken(File json) {
+//        JsonPath jsonPath = new JsonPath(json);
+//        SerenityRest.given()
+//                .headers("Authorization", TOKEN_ERNAUSER)
+//                .multiPart("product_image", new File(IMAGE_FOLDER + "/gula_tebu.jpeg"))
+//                .formParam("product_name",jsonPath.get("product_name").toString())
+//                .formParam("unit",jsonPath.get("unit").toString())
+//                .formParam("stock",jsonPath.get("stock").toString())
+//                .formParam("price",jsonPath.get("price").toString());
+//    }
     @Step("Put product user with valid token")
     public static void putProductUserWithValidToken(File json, int idProduct) {
         JsonPath jsonPath = new JsonPath(json);
         SerenityRest.given()
                 .headers("Authorization", TOKEN_ERNAUSER)
                 .pathParam("id", idProduct)
-                .multiPart("product_image", new File(IMAGE_FOLDER + "/gula_pasir_bening.jpeg"))
+                .multiPart("product_image", new File(IMAGE_FOLDER + "/gula_tebu.jpeg"))
                 .formParam("product_name",jsonPath.get("product_name").toString())
                 .formParam("unit",jsonPath.get("unit").toString())
-                .formParam("stock",jsonPath.get("stock").toString());
-//                .formParam("price",jsonPath.get("price").toString());
+                .formParam("stock",jsonPath.get("stock").toString())
+                .formParam("price",jsonPath.get("price").toString());
     }
 
     @Step("Put product user with invalid token")
