@@ -16,21 +16,31 @@ public class MiddlemanAPI_Admins {
     public static String IMAGE_FOLDER = DIR + "/src/test/resources/Image";
 
     public static String TOKEN_ADMINS = "";
-    public static String TOKEN_ADMINS_INVALID = "";
-    public static String GET_ALL_PRODUCT_ADMINS = URL+"/admins";
-    public static String GET_INVALIDPATH_ADMINS = URL+"/adminssss";
-    public static String POST_CREATE_ADMINS = URL+"/admins";
-    public static String PUT_UPDATE_ADMINS = URL+"/admins/6";
-    public static String DELETE_PRODUCT_ADMINS = URL+"/admins/{id}";
-    public static String DELETE_INVALIDPATH_ADMINS = URL+"/adminss/{id}";
+    public static String GET_ALL_PRODUCT_ADMINS = URL+"/admins/products";
+    public static String GET_INVALIDPATH_ADMINS = URL+"/adminssss/products";
+    public static String POST_CREATE_ADMINS = URL+"/admins/products";
+    public static String PUT_UPDATE_ADMINS = URL+"/admins/products/6";
+    public static String DELETE_PRODUCT_ADMINS = URL+"/admins/products/{id}";
+    public static String DELETE_INVALIDPATH_ADMINS = URL+"/adminss/products/{id}";
+    public static String GET_SEARCH_PRODUCT_ADMINS_VALIDNAME = URL+"/admins/products/search?productname=tepung";
+    public static String GET_SEARCH_PRODUCT_ADMINS_ONEKEYWORD = URL+"/admins/products/search?productname=b";
+    public static String GET_SEARCH_PRODUCT_ADMINS_TWOKEYWORD = URL+"/admins/products/search?productname=tt";
+    public static String GET_SEARCH_PRODUCT_ADMINS_INVALIDKEYWORD = URL+"/admins/products/search?productname=XXXXXX";
+    public static String GET_SEARCH_PRODUCT_ADMINS_INVALIDPATH = URL+"/admins/productssss/search?productname=tepung";
 
     @Step("Get all product admins")
     public static void getAllProductAdmins(File json) {
         SerenityRest.given()
-                .contentType(ContentType.JSON)
-                .body(json);
+                .contentType(ContentType.JSON);
+                //.body(json);
 
     }
+    @Step("Get search product admins")
+    public static void getSearchProductAdmins(String productname) {
+        SerenityRest.given()
+                .queryParam("productname",productname);
+    }
+
     @Step("Post create product admins")
     public static void postCreateProductAdmins(File json) {
         JsonPath jsonPath = new JsonPath(json);
@@ -72,6 +82,12 @@ public class MiddlemanAPI_Admins {
                 .formParam("product_name",jsonPath.get("product_name").toString())
                 .formParam("stock",jsonPath.get("stock").toString());
     }
+    @Step("Put update product admins with empty data")
+    public static void putUpdateProductAdminsWithEmptyData(File json) {
+        SerenityRest.given()
+                .header("Authorization", TOKEN_ADMINS);
+    }
+
     @Step("Delete product admins")
     public void deleteProductAdmins (int id){
         SerenityRest.given()
