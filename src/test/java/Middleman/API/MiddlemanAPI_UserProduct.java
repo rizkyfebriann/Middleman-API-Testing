@@ -23,6 +23,15 @@ public class MiddlemanAPI_UserProduct {
     public static String DELETE_USER_PRODUCT = Constant.URL+"/users/products/{id}";
     public static String DELETE_USER_PRODUCT_INVALID_PATH = Constant.URL+"/users/productsss/{id}";
 
+    public static String GET_SEARCH_PRODUCT_USER = Constant.URL+"/users/products/search?productname=";
+    public static String GET_SEARCH_PRODUCT_USER_INVALID_PATH = Constant.URL+"/users/productsss/search?productname=";
+//    public static String GET_SEARCH_PRODUCT_USER_TWO_ALPHABET = Constant.URL+"/users/products/search?productname=gu";
+//    public static String GET_SEARCH_PRODUCT_USER_WITH_NUMERIC = Constant.URL+"/users/products/search?productname=12";
+//    public static String GET_SEARCH_PRODUCT_USER_SPECIAL_CHART = Constant.URL+"/users/products/search?productname=@";
+//    public static String GET_SEARCH_PRODUCT_USER_COMBINATION = Constant.URL+"/users/products/search?productname=gula1";
+
+
+
 
     @Step("Get product user with valid token")
     public void getProductUserWithValidToken() {
@@ -39,6 +48,12 @@ public class MiddlemanAPI_UserProduct {
     public void getProductUserWithoutToken(){
         SerenityRest.given()
                 .headers("Authorization", TOKEN_ERNAUSER);
+    }
+
+    @Step("Get search product user")
+    public static void getSearchProductUser(String productName) {
+        SerenityRest.given()
+                .queryParam("productname",productName);
     }
 
     @Step("Post product user with valid token")

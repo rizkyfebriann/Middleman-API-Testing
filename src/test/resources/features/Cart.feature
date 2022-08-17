@@ -29,7 +29,7 @@ Feature: Cart
     Given Create new product to cart with valid id and multiple qty
     When Send request create product to the cart
     Then API response status code should be 201 created
-    And response body should contains code 201 and message "success"
+#    And response body should contains code 201 and message "success"
 
   @cart @loginErnaUser
   Scenario: Create new product to cart (authorized user) with empty qty

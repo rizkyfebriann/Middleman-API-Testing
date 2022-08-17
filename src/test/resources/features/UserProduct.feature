@@ -120,6 +120,59 @@ Feature: User_Product
 #    When Send request delete product user
 #    Then API response status code should be 200 OK
 
+  @user_product @Positive
+  Scenario: Get search product user with valid product name
+    Given Get search product user with valid parameter name "gula"
+    When Send request get search product user
+    Then Status code should be 200 OK
+    And Get all search product user assert json validation
+
+  @user_product @Positive
+  Scenario: Get search product user with two alphabet contains from product name
+    Given Get search product user with two alphabet contains from product name "gu"
+    When Send request get search product user
+    Then Status code should be 200 OK
+    And Get all search product user assert json validation
+
+  @user_product @Positive
+  Scenario: Get search product (authorized user) with keyword numeric
+    Given Get search product user with keyword numeric "12"
+    When Send request get search product user
+    Then Status code should be 200 OK
+    And Get all search product user assert json validation
+
+  @user_product @Positive
+  Scenario: Get search product (authorized user) with special chart
+    Given Get search product user with special chart "@"
+    When Send request get search product user
+    Then Status code should be 200 OK
+    And Get all search product user assert json validation
+
+  @user_product @Positive
+  Scenario: Get search products with combination of alphanumeric character
+    Given Get search product user with combination of alphanumeric character "gula1"
+    When Send request get search product user
+    Then Status code should be 200 OK
+    And Get all search product user assert json validation
+
+  @user_product @Positive
+  Scenario: Get Search product (authorized user) with empty value param
+    Given Get search product user with empty value param ""
+    When Send request get search product user
+    Then Status code should be 400 bad request
+
+  @user_product @Positive
+  Scenario: Get search product user with invalid path
+    Given Get search product user with id "2" on invalid path
+    When Send request get search product user with invalid path
+    Then Status code should be 404 not found
+
+
+
+
+
+
+
 
 
 

@@ -1,5 +1,6 @@
 package Middleman.StepDefs;
 
+import Middleman.API.MiddlemanAPI_Admins;
 import Middleman.API.MiddlemanAPI_UserProduct;
 import Middleman.API.MiddlemanAPI_Users;
 import io.cucumber.java.en.And;
@@ -159,6 +160,54 @@ public class MIddlemanUserProductStepDefs {
         SerenityRest.when().delete(MiddlemanAPI_UserProduct.DELETE_USER_PRODUCT_INVALID_PATH);
     }
 
+    @Given("Get search product user with valid parameter name {string}")
+    public void getSearchProductUserWithValidParameterName(String productname) {
+        middlemanAPIUserProduct.getSearchProductUser(productname);
+    }
+    @When("Send request get search product user")
+    public void sendRequestGetSearchProductUser() {
+        SerenityRest.when().get(MiddlemanAPI_UserProduct.GET_SEARCH_PRODUCT_USER);
+    }
+    @And("Get all search product user assert json validation")
+    public void getAllSearchProductUserAssertJsonValidation() {
+        File jsonFile = new File(MiddlemanAPI_UserProduct.JSON_FILE_USER_PRODUCT+"/GetSearchProductUserValidProductNameValidation.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonFile));
+    }
+
+    @Given("Get search product user with two alphabet contains from product name {string}")
+    public void getSearchProductUserWithTwoAlphabetContainsFromProductName(String productname) {
+        middlemanAPIUserProduct.getSearchProductUser(productname);
+    }
+    @Given("Get search product user with keyword numeric {string}")
+    public void getSearchProductUserWithKeywordNumeric(String productName) {
+        middlemanAPIUserProduct.getSearchProductUser(productName);
+    }
+
+    @Given("Get search product user with special chart {string}")
+    public void getSearchProductUserWithSpecialChart(String productName) {
+        middlemanAPIUserProduct.getSearchProductUser(productName);
+    }
+
+    @Given("Get search product user with combination of alphanumeric character {string}")
+    public void getSearchProductUserWithCombinationOfAlphanumericCharacter(String productName) {
+        middlemanAPIUserProduct.getSearchProductUser(productName);
+    }
+
+    @Given("Get search product user with empty value param {string}")
+    public void getSearchProductUserWithEmptyValueParam(String productName) {
+        middlemanAPIUserProduct.getSearchProductUser(productName);
+    }
+
+    @Given("Get search product user with id {string} on invalid path")
+    public void getSearchProductUserWithIdOnInvalidPath(String productName) {
+        middlemanAPIUserProduct.getSearchProductUser(productName);
+    }
+
+    @When("Send request get search product user with invalid path")
+    public void sendRequestGetSearchProductUserWithInvalidPath() {
+        SerenityRest.when().get(MiddlemanAPI_UserProduct.GET_SEARCH_PRODUCT_USER_INVALID_PATH);
+
+    }
 
 //    @Given("Update product user with price not valid on id {int}")
 //    public void updateProductUserWithPriceNotValidOnId(int idProduct) {
