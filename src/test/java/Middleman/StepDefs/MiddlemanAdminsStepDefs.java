@@ -15,11 +15,9 @@ public class MiddlemanAdminsStepDefs {
     @Steps
     MiddlemanAPI_Admins middlemanAPIadmins;
 
-
-    @When("Get all product admins with valid json file")
-    public void getAllProductAdminsWithValidJsonFile() {
-        File jsonFiles = new File( MiddlemanAPI_Admins.JSON_FILE_ADMINS+"/GetAllProductAdmins.json");
-        middlemanAPIadmins.getAllProductAdmins(jsonFiles);
+    @Given("Get all product admins with valid path {string}")
+    public void getAllProductAdminsWithValidPath(String path) {
+        middlemanAPIadmins.getAllProductAdmins(path);
     }
 
     @When("Send request get all product admins")
@@ -36,6 +34,11 @@ public class MiddlemanAdminsStepDefs {
     public void getAllProductAdminsAssertJsonValidation() {
         File jsonFile = new File(MiddlemanAPI_Admins.JSON_FILE_ADMINS +"/GetAllProductAdminsValidation.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonFile));
+    }
+
+    @Given("Get all product admins with invalid path {string}")
+    public void getAllProductAdminsWithInvalidPath(String path) {
+        middlemanAPIadmins.getAllProductAdmins(path);
     }
 
     @When("Send request get all product admins with invalid path")

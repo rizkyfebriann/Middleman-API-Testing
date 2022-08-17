@@ -29,10 +29,9 @@ public class MiddlemanAPI_Admins {
     public static String GET_SEARCH_PRODUCT_ADMINS_INVALIDPATH = URL+"/admins/productssss/search?productname=tepung";
 
     @Step("Get all product admins")
-    public static void getAllProductAdmins(File json) {
+    public static void getAllProductAdmins(String path) {
         SerenityRest.given()
-                .contentType(ContentType.JSON);
-                //.body(json);
+                .queryParam("path",path);
 
     }
     @Step("Get search product admins")
