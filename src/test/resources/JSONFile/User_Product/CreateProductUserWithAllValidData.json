@@ -1,7 +1,7 @@
 {
-  "product_name": "Gula_Pasir",
-  "unit" :"1 kg",
-  "stock": 100,
-  "price" : 20000,
+  "product_name": "gula tebu",
+  "unit" :"kg",
+  "stock": 200,
+  "price" : 10000,
   "product_image": "--"
 }
