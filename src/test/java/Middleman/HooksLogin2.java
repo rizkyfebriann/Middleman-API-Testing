@@ -13,7 +13,10 @@ import java.io.File;
 
 import static Middleman.API.MiddlemanAPI_InOutBounds.URL;
 
-public class Hooks {
+public class HooksLogin2 {
+
+
+
     @Before("@loginAdmins")
     public void login_admins(){
         File json = new File("src/test/resources/JSONFile/Login/ValidLoginAdmin.json");
@@ -57,7 +60,7 @@ public class Hooks {
         MiddlemanAPI_InOutBounds.TOKEN_RIZKYUSER = "";
     }
 
-    @After("@loginAdmins")
+    @After
     public void reset_token_admins(){
         MiddlemanAPI_Admins.TOKEN_ADMINS = "x";
     }

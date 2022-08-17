@@ -16,12 +16,6 @@ public class MiddlemanAdminsStepDefs {
     MiddlemanAPI_Admins middlemanAPIadmins;
 
 
-//    @Given("Authorization bearer token")
-//    public void authorizationBearerToken() {
-//       MiddlemanAPI.TOKEN_ADMINS = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6MTAsIlJvbGUiOiJhZG1pbiIsImV4cCI6MTY2MDQ3NTk2NX0.eonFPMsPeyx0-BAlVawWgb0WwJocWQS1IP3kYbLsU_M";
-//
-//    }
-
     @When("Get all product admins with valid json file")
     public void getAllProductAdminsWithValidJsonFile() {
         File jsonFiles = new File( MiddlemanAPI_Admins.JSON_FILE_ADMINS+"/GetAllProductAdmins.json");
@@ -48,7 +42,72 @@ public class MiddlemanAdminsStepDefs {
     @When("Send request get all product admins with invalid path")
     public void sendRequestGetAllProductAdminsWithInvalidPath() {
         SerenityRest.when().post(MiddlemanAPI_Admins.GET_INVALIDPATH_ADMINS);
+    } @Given("Get search product admins with valid product name")
+
+
+    public void getSearchProductAdminsWithValidProductName() {
+        File jsonFiles = new File( MiddlemanAPI_Admins.JSON_FILE_ADMINS+"/GetSearchProductAdminsValidProductName.json");
+        middlemanAPIadmins.getSearchProductAdmins(jsonFiles);
     }
+
+    @When("Send request get search with valid product name")
+    public void sendRequestGetSearchWithValidProductName() {
+        SerenityRest.when().get(MiddlemanAPI_Admins.GET_SEARCH_PRODUCT_ADMINS_VALIDNAME );
+    }
+
+    @And("Get all search product admins assert json validation")
+    public void getAllSearchProductAdminsAssertJsonValidation() {
+        File jsonFile = new File(MiddlemanAPI_Admins.JSON_FILE_ADMINS +"/GetSearchProductAdminsValidProductNameValidation.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonFile));
+    }
+
+    @Given("Get search product admins with one alphabet contains from product name")
+    public void getSearchProductAdminsWithOneAlphabetContainsFromProductName() {
+        File jsonFiles = new File( MiddlemanAPI_Admins.JSON_FILE_ADMINS+"/GetSearchProductAdminsValidProductName.json");
+        middlemanAPIadmins.getSearchProductAdmins(jsonFiles);
+
+    }
+
+    @When("Send request get search with one alphabet contains from product name")
+    public void sendRequestGetSearchWithOneAlphabetContainsFromProductName() {
+        SerenityRest.when().get(MiddlemanAPI_Admins.GET_SEARCH_PRODUCT_ADMINS_ONEKEYWORD );
+    }
+
+    @Given("Get search product with two alphabet contains from product name")
+    public void getSearchProductWithTwoAlphabetContainsFromProductName() {
+        File jsonFiles = new File( MiddlemanAPI_Admins.JSON_FILE_ADMINS+"/GetSearchProductAdminsValidProductName.json");
+        middlemanAPIadmins.getSearchProductAdmins(jsonFiles);
+
+    }
+
+    @When("Send request get search with two alphabet contains from product name")
+    public void sendRequestGetSearchWithTwoAlphabetContainsFromProductName() {
+        SerenityRest.when().get(MiddlemanAPI_Admins.GET_SEARCH_PRODUCT_ADMINS_TWOKEYWORD);
+    }
+
+    @Given("Get search product admins with invalid keyword value")
+    public void getSearchProductAdminsWithInvalidKeywordValue() {
+        File jsonFiles = new File( MiddlemanAPI_Admins.JSON_FILE_ADMINS+"/GetSearchProductAdminsValidProductName.json");
+        middlemanAPIadmins.getSearchProductAdmins(jsonFiles);
+
+    }
+
+    @When("Send request get search with invalid keyword")
+    public void sendRequestGetSearchWithInvalidKeyword() {
+        SerenityRest.when().get(MiddlemanAPI_Admins.GET_SEARCH_PRODUCT_ADMINS_INVALIDKEYWORD);
+    }
+
+    @Given("Get search product admins with invalid path param")
+    public void getSearchProductAdminsWithInvalidPathParam() {
+        File jsonFiles = new File( MiddlemanAPI_Admins.JSON_FILE_ADMINS+"/GetSearchProductAdminsValidProductName.json");
+        middlemanAPIadmins.getSearchProductAdmins(jsonFiles);
+    }
+
+    @When("Send request get search with invalid path param")
+    public void sendRequestGetSearchWithInvalidPathParam() {
+        SerenityRest.when().get(MiddlemanAPI_Admins.GET_SEARCH_PRODUCT_ADMINS_INVALIDPATH);
+    }
+
 
     @Then("Status code should be {int} not found")
     public void statusCodeShouldBeNotFound(int not_found) {
@@ -93,12 +152,6 @@ public class MiddlemanAdminsStepDefs {
     public void sendPostCreateProductAdminsWithInvalidPriceOnJsonFile() {
         File jsonFiles = new File( MiddlemanAPI_Admins.JSON_FILE_ADMINS+"/PostCreateProductAdminsInvalidPrice.json");
         middlemanAPIadmins.postCreateProductAdmins(jsonFiles);
-    }
-
-    @Given("Authorization invalid bearer token")
-    public void authorizationInvalidBearerToken() {
-        MiddlemanAPI_Admins.TOKEN_ADMINS_INVALID = "invalideyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6MTAsIlJvbGUiOiJhZG1pbiIsImV4cCI6MTY2MDM3MjMxMX0.EoGYbcbsszhfuD_D5hzBGAJynq07LHTjWySqS4kEDBw";
-
     }
 
     @Then("Status code should be {int} unauthorized")
@@ -161,5 +214,23 @@ public class MiddlemanAdminsStepDefs {
     @When("Send request delete comments with invalid path")
     public void sendRequestDeleteCommentsWithInvalidPath() {
         SerenityRest.when().post(MiddlemanAPI_Admins.DELETE_INVALIDPATH_ADMINS);
+    }
+
+    @When("Send post create product admins with registered product name on json file")
+    public void sendPostCreateProductAdminsWithRegisteredProductNameOnJsonFile() {
+        File jsonFiles = new File( MiddlemanAPI_Admins.JSON_FILE_ADMINS+"/PostCreateProductAdminsWithRegisteredProductName.json");
+        middlemanAPIadmins.postCreateProductAdmins(jsonFiles);
+    }
+
+    @Then("Status code should be {int} and response body {string}")
+    public void statusCodeShouldBeAndResponseBody(int internal_server_error, String arg1 ) {
+        SerenityRest.then().statusCode(internal_server_error);
+    }
+
+    @When("Send put update product admins with empty data on json file")
+    public void sendPutUpdateProductAdminsWithEmptyDataOnJsonFile() {
+        File jsonFiles = new File( MiddlemanAPI_Admins.JSON_FILE_ADMINS+"/PutUpdateProductAdminsWithoutProductImage.json");
+        middlemanAPIadmins.putUpdateProductAdminsWithEmptyData(jsonFiles);
+
     }
 }
