@@ -1,10 +1,28 @@
+<!-- LOGO -->
+<br />
+<h1>
+<p align="center">
 <a href="https://middleman-alta.vercel.app/auth/welcome">
-    <img src="https://middleman-alta.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.f4fa4ef1.png&w=640&q=75" alt="Middleman Logo" title="Middleman" align="right" height="60" />
-</a>
+  <img src="https://middleman-alta.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.f4fa4ef1.png&w=640&q=75" alt="Logo" width="140" height="110">
+  <br>Middleman
+</h1>
+  <p align="center">
+    Solution for your store to buying products on distributor via online.
+    <br />
+    </p>
+</p>
+<p align="center">
+  <a href="#about-the-project">About The Project</a> •
+  <a href="#documentation">Documentation</a> •
+  <a href="#API-Automation-Screenshots">Automation Screenshots</a> •
+  <a href="#API-Automation-Recording">Automation Recording</a> •
+  <a href="#Usage-Tools">Usage Tools</a> •
+  <a href="#Contacts">Contacts</a>
+</p>  
 
 
-# MIDDLEMAN - QE
 
+# About The Project
 
 Description about project
 
