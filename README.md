@@ -15,8 +15,8 @@
 <p align="center">
   <a href="#about-the-project">About The Project</a> •
   <a href="#documentation">Documentation</a> •
-  <a href="#API-Manual-Test-Screenshot">Automation Screenshots</a> •
-  <a href="#API-Automation-Test-Screenshot">Automation Recording</a> •
+  <a href="#API-Manual-Test-Screenshot">Manual Testing</a> •
+  <a href="#API-Automation-Test-Screenshot">Automation Testing</a> •
   <a href="#Usage-Tools">Usage Tools</a> •
   <a href="#Contacts">Contacts</a>
 </p>  
