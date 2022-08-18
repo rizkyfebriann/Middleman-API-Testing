@@ -119,6 +119,6 @@ Description about project
 
 ## Contacts
 
-- [Test1](https://github.com/A)
-- [Test2](https://github.com/B)
-- [Test3](https://github.com/C)
+- [Nashuha Mahira](https://github.com/nshmahira)
+- [Ernawati](https://github.com/erna94)
+- [Rizky Febrian](https://github.com/rizkyfebriann)
