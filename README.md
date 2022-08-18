@@ -1,3 +1,8 @@
+<a href="https://middleman-alta.vercel.app/auth/welcome">
+    <img src="https://middleman-alta.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.f4fa4ef1.png&w=640&q=75" alt="Middleman Logo" title="Middleman" align="right" height="60" />
+</a>
+
+
 # MIDDLEMAN - QE
 
 
