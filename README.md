@@ -96,7 +96,7 @@ Middleman is a project for helping each store for buying some products for stock
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/)
 - [Java](https://www.java.com/)
 - [Maven](https://maven.apache.org/)
-- [Google Chrome (WEB Browser)](https://www.google.com/chrome/)
+- [Google Chrome (Web Browser)](https://www.google.com/chrome/)
 
 **Framework Used In Automation Testing:**
 - [Serenity BDD](https://serenity-bdd.info/)
