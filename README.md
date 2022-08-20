@@ -25,9 +25,7 @@
 
 # About The Project
 
-Description about project
-
-
+Middleman is a project for helping each store for buying some products for stock on distributor via online. In real case, many store that still doing manual for listing stock product, add / reduce for in/out stock product, take a notes for stock of their products. So therefore, Middleman is developed here trying for handle that behaviour user which changing from manual to all stock activity in online.
 
 ## Documentation
 
@@ -123,3 +121,5 @@ Description about project
 - [Nashuha Mahira](https://github.com/nshmahira)
 - [Ernawati](https://github.com/erna94)
 - [Rizky Febrian](https://github.com/rizkyfebriann)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
