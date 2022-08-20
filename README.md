@@ -22,14 +22,14 @@
 </p>  
 
 
-
 # About The Project
 
 Middleman is a project for helping each store for buying some products for stock on distributor via online. In real case, many store that still doing manual for listing stock product, add / reduce for in/out stock product, take a notes for stock of their products. So therefore, Middleman is developed here trying for handle that behaviour user which changing from manual to all stock activity in online.
 
+
 ## Documentation
 
-[Documentation Test Scenario](Linknya nanti)
+[Documentation Test Scenario](https://docs.google.com/spreadsheets/d/1P6JTRV_uYcry817vJbE9zrrrI6YT64Fig3RpcpYo3WY/edit?usp=sharing)
 
 
 ## API Manual Test Screenshot
@@ -78,7 +78,6 @@ Middleman is a project for helping each store for buying some products for stock
   style="display: inline-block; margin: 0 auto; max-width: 50px">  
   
   
-
   ## API Automation Test Video
       
     
@@ -87,33 +86,31 @@ Middleman is a project for helping each store for buying some products for stock
 
 
 
-
-
 ## Tech Stack 
 
-**Testing Tools for manual:**  
-- [Google Chrome (WEB Browser)](https://www.google.com/chrome/)
+**Manual Testing Tools:**  
+- [Google Chrome (Web Browser)](https://www.google.com/chrome/)
 - [Postman](https://www.postman.com/)
 
-**Testing Tools for automation:** 
+**Automation Testing Tools:** 
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/)
 - [Java](https://www.java.com/)
 - [Maven](https://maven.apache.org/)
 - [Google Chrome (WEB Browser)](https://www.google.com/chrome/)
 
-**Framework for automation:**
+**Framework Used In Automation Testing:**
 - [Serenity BDD](https://serenity-bdd.info/)
 - [Cucumber](https://cucumber.io/)
 
-**Documentation Tools:** 
-- [Google spreadsheet](https://www.google.com/sheets/about/)
+**Documentation Tools For Scenario Testing:** 
+- [Google Spreadsheet](https://www.google.com/sheets/about/)
 
 **Collaboration:**
 - [Trello (Work Management Tool)](https://trello.com/)
 - [GitHub (Version Control System Platform)](https://github.com/)
 - [Telegram](https://web.telegram.org/)
 - [Discord](https://discord.com/)
-
+- [Zoom](https://zoom.us/)
 
 
 ## Contacts
