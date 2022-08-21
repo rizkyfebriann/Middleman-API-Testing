@@ -41,10 +41,9 @@ public class MiddlemanCartStepDefs {
 
     @Given("Create new product to cart with valid id and qty exceeds stock product")
     public void createNewProductToCartWithValidIdAndQtyExceedsStockProduct() {
-        File jsonFilesCreateCart = new File( MiddlemanAPI_Cart.JSON_FILE_CART+"/CreateToCartWithQty>Stock.json");
+        File jsonFilesCreateCart = new File( MiddlemanAPI_Cart.JSON_FILE_CART+"/CreateToCartWithQtyExceedsStock.json");
         middlemanAPI_cart.CreateProductToCartWithAuthorizedUser(jsonFilesCreateCart);
     }
-
     @Given("Create new product to cart with valid id and multiple qty")
     public void createNewProductToCartWithValidIdAndMultipleQty() {
         File jsonFilesCreateCart = new File( MiddlemanAPI_Cart.JSON_FILE_CART+"/CreateToCartWithMultipleQty.json");
