@@ -2,6 +2,7 @@ package Middleman;
 
 import Middleman.API.MiddlemanAPI_InOutBounds;
 import Middleman.API.MiddlemanAPI_Admins;
+import Middleman.API.MiddlemanAPI_Orders;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.restassured.http.ContentType;
@@ -40,6 +41,17 @@ public class HooksLogin1 {
                 .post(URL+"/login");
         JsonPath jsonPath = response.jsonPath();
         MiddlemanAPI_InOutBounds.TOKEN_RIZKYUSER1 = jsonPath.get("data.token");
+    }
+
+    @Before("@loginUserValidTesting")
+    public void loginUserValidTest(){
+        File json = new File("src/test/resources/JSONFile/Login/ValidEmailLoginRizky.json");
+        Response response= SerenityRest.given()
+                .contentType(ContentType.JSON)
+                .body(json)
+                .post(URL+"/login");
+        JsonPath jsonPath = response.jsonPath();
+        MiddlemanAPI_Orders.TOKEN_USER_VALID_EMAIL = jsonPath.get("data.token");
     }
 
     @Before("@loginAdmins")
