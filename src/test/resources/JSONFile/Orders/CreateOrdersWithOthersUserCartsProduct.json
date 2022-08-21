@@ -1,0 +1,12 @@
+{
+  "grand_total": 13000,
+  "items": [
+    {
+      "product_id": 41,
+      "product_name": "beras ayamku",
+      "unit": "kg",
+      "qty": 1,
+      "subtotal": 13000
+    }
+  ]
+}
