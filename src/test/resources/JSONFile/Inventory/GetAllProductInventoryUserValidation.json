@@ -1,0 +1,157 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "integer"
+    },
+    "data": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "date": {
+              "type": "string"
+            },
+            "inventory_id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "date",
+            "inventory_id"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "date": {
+              "type": "string"
+            },
+            "inventory_id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "date",
+            "inventory_id"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "date": {
+              "type": "string"
+            },
+            "inventory_id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "date",
+            "inventory_id"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "date": {
+              "type": "string"
+            },
+            "inventory_id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "date",
+            "inventory_id"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "date": {
+              "type": "string"
+            },
+            "inventory_id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "date",
+            "inventory_id"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "date": {
+              "type": "string"
+            },
+            "inventory_id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "date",
+            "inventory_id"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "date": {
+              "type": "string"
+            },
+            "inventory_id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "date",
+            "inventory_id"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "date": {
+              "type": "string"
+            },
+            "inventory_id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "date",
+            "inventory_id"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "date": {
+              "type": "string"
+            },
+            "inventory_id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "date",
+            "inventory_id"
+          ]
+        }
+      ]
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "code",
+    "data",
+    "message"
+  ]
+}

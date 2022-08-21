@@ -6,6 +6,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.module.jsv.JsonSchemaValidator;
+import io.restassured.response.Response;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
 
@@ -120,7 +121,8 @@ public class MiddlemanAdminsStepDefs {
 
     @When("Send request post create a new product admins")
     public void sendRequestPostCreateANewProductAdmins() {
-        SerenityRest.when().post(MiddlemanAPI_Admins.POST_CREATE_ADMINS);
+        Response response= SerenityRest.when().post(MiddlemanAPI_Admins.POST_CREATE_ADMINS);
+        response.prettyPrint();
     }
 
     @Then("Status code should be {int} created")
