@@ -1,7 +1,7 @@
 {
-  "product_name": "gula pasir",
+  "product_name": "gula tebu",
   "unit" :"2 kg",
   "stock": 20,
   "price" : 200000,
-  "product_image": "--"
+  "product_image": "https://heribucketbe10.s3.amazonaws.com/2022-08-1619%3A00%3A25-s3.jpeg"
 }

@@ -2,15 +2,49 @@ Feature: Admins
 
   @Admins @Positive
   Scenario: Get all product admins with valid data
-    Given Get all product admins with valid json file
+    Given Get all product admins with valid path "/products"
     When Send request get all product admins
     Then Status code should be 200 OK
     And Get all product admins assert json validation
 
   @Admins @Negative
-  Scenario: Get all product admins with invalid path
-    Given Get all product admins with valid json file
+  Scenario: Get all product admins invalid path
+    Given Get all product admins with invalid path "/productsss"
     When Send request get all product admins with invalid path
+    Then Status code should be 404 not found
+
+  @Admins @Positive
+  Scenario: Get search product admins with valid product name
+    Given Get search product admins with parameter product name "tepung"
+    When Send request get search with valid product name
+    Then Status code should be 200 OK
+    And Get all search product admins assert json validation
+
+  @Admins @Positive
+  Scenario: Get search product with one alphabet contains from product name
+    Given Get search product admins with one alphabet contains from product name "b"
+    When Send request get search with one alphabet contains from product name
+    Then Status code should be 200 OK
+    And Get all search product admins assert json validation
+
+  @Admins @Positive
+  Scenario: Get search product with two alphabet contains from product name
+    Given Get search product admins with two alphabet contains from product name "te"
+    When Send request get search with two alphabet contains from product name
+    Then Status code should be 200 OK
+    And Get all search product admins assert json validation
+
+  @Admins @Negative
+  Scenario: Get search product with invalid keyword value
+    Given Get search product admins with invalid keyword value "XXXXXX"
+    When Send request get search with invalid keyword
+    Then Status code should be 200 OK
+    And Get all search product admins assert json validation
+
+  @Admins @Negative
+  Scenario: Get search product with invalid path param
+    Given Get search product admins with invalid path param "/productssss"
+    When Send request get search with invalid path param
     Then Status code should be 404 not found
 
   @Admins @Positive @loginAdmins
@@ -30,6 +64,12 @@ Feature: Admins
     When Send post create product admins with invalid price on json file
     When Send request post create a new product admins
     Then Status code should be 400 wrong input
+
+  @Admins @Negative @loginAdmins
+  Scenario: Post create a new product admins with registered product name
+    When Send post create product admins with registered product name on json file
+    When Send request post create a new product admins
+    Then Status code should be 500 and response body "failed to get file"
 
   @Admins @Negative @InvalidToken
   Scenario: Post create a new product admins with invalid bearer token
@@ -62,7 +102,7 @@ Feature: Admins
     Then Status code should be 200 OK
 
   @Admins @Positive @loginAdmins
-  Scenario: Put update product admins with invalid product image
+  Scenario: Put update product admins without product image
     When Send put update product admins without product image on json file
     When Send request put update admins
     Then Status code should be 200 OK
@@ -72,6 +112,12 @@ Feature: Admins
     When Send put update product admins with invalid stock json file
     When Send request put update admins
     Then Status code should be 400 wrong input
+
+  @Admins @Positive @loginAdmins
+  Scenario: Put update product admins with empty data
+    When Send put update product admins with empty data on json file
+    When Send request put update admins
+    Then Status code should be 200 OK
 
   @Admins @Negative @InvalidToken
   Scenario: Put update product admins with invalid bearer token
@@ -87,21 +133,29 @@ Feature: Admins
 
   @Admins @Positive @loginAdmins
   Scenario: Delete product admins with valid id
-    When Delete comments with id 10
+    When Delete comments with id 13
     When Send request delete comments
     Then Status code should be 204 No content
 
   @Admins @Negative @loginAdmins
   Scenario: Delete product admins with invalid path
-    When Delete comments with id 10
+    When Delete comments with id 13
     When Send request delete comments with invalid path
     Then Status code should be 404 not found
 
   @Admins @Negative @InvalidToken
   Scenario: Delete product admins with invalid bearer token
-    When Delete comments with id 10
+    When Delete comments with id 13
     When Send request delete comments
     Then Status code should be 401 unauthorized
+
+  @Admins @Negative
+  Scenario: Delete product admins without bearer token
+    When Delete comments with id 13
+    When Send request delete comments
+    Then Status code should be 400 bad request
+
+
 
 
 

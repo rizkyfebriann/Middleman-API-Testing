@@ -11,313 +11,342 @@
         {
           "type": "object",
           "properties": {
-            "ID": {
+            "id": {
               "type": "integer"
             },
-            "IdAdmin": {
+            "price": {
               "type": "integer"
             },
-            "Name": {
+            "product_image": {
               "type": "string"
             },
-            "Unit": {
+            "product_name": {
               "type": "string"
             },
-            "Stock": {
+            "stock": {
               "type": "integer"
             },
-            "Price": {
-              "type": "integer"
-            },
-            "Image": {
-              "type": "string"
-            },
-            "CreatedAt": {
+            "unit": {
               "type": "string"
             }
           },
           "required": [
-            "ID",
-            "IdAdmin",
-            "Name",
-            "Unit",
-            "Stock",
-            "Price",
-            "Image",
-            "CreatedAt"
+            "id",
+            "price",
+            "product_image",
+            "product_name",
+            "stock",
+            "unit"
           ]
         },
         {
           "type": "object",
           "properties": {
-            "ID": {
+            "id": {
               "type": "integer"
             },
-            "IdAdmin": {
+            "price": {
               "type": "integer"
             },
-            "Name": {
+            "product_image": {
               "type": "string"
             },
-            "Unit": {
+            "product_name": {
               "type": "string"
             },
-            "Stock": {
+            "stock": {
               "type": "integer"
             },
-            "Price": {
-              "type": "integer"
-            },
-            "Image": {
-              "type": "string"
-            },
-            "CreatedAt": {
+            "unit": {
               "type": "string"
             }
           },
           "required": [
-            "ID",
-            "IdAdmin",
-            "Name",
-            "Unit",
-            "Stock",
-            "Price",
-            "Image",
-            "CreatedAt"
+            "id",
+            "price",
+            "product_image",
+            "product_name",
+            "stock",
+            "unit"
           ]
         },
         {
           "type": "object",
           "properties": {
-            "ID": {
+            "id": {
               "type": "integer"
             },
-            "IdAdmin": {
+            "price": {
               "type": "integer"
             },
-            "Name": {
+            "product_image": {
               "type": "string"
             },
-            "Unit": {
+            "product_name": {
               "type": "string"
             },
-            "Stock": {
+            "stock": {
               "type": "integer"
             },
-            "Price": {
-              "type": "integer"
-            },
-            "Image": {
-              "type": "string"
-            },
-            "CreatedAt": {
+            "unit": {
               "type": "string"
             }
           },
           "required": [
-            "ID",
-            "IdAdmin",
-            "Name",
-            "Unit",
-            "Stock",
-            "Price",
-            "Image",
-            "CreatedAt"
+            "id",
+            "price",
+            "product_image",
+            "product_name",
+            "stock",
+            "unit"
           ]
         },
         {
           "type": "object",
           "properties": {
-            "ID": {
+            "id": {
               "type": "integer"
             },
-            "IdAdmin": {
+            "price": {
               "type": "integer"
             },
-            "Name": {
+            "product_image": {
               "type": "string"
             },
-            "Unit": {
+            "product_name": {
               "type": "string"
             },
-            "Stock": {
+            "stock": {
               "type": "integer"
             },
-            "Price": {
-              "type": "integer"
-            },
-            "Image": {
-              "type": "string"
-            },
-            "CreatedAt": {
+            "unit": {
               "type": "string"
             }
           },
           "required": [
-            "ID",
-            "IdAdmin",
-            "Name",
-            "Unit",
-            "Stock",
-            "Price",
-            "Image",
-            "CreatedAt"
+            "id",
+            "price",
+            "product_image",
+            "product_name",
+            "stock",
+            "unit"
           ]
         },
         {
           "type": "object",
           "properties": {
-            "ID": {
+            "id": {
               "type": "integer"
             },
-            "IdAdmin": {
+            "price": {
               "type": "integer"
             },
-            "Name": {
+            "product_image": {
               "type": "string"
             },
-            "Unit": {
+            "product_name": {
               "type": "string"
             },
-            "Stock": {
+            "stock": {
               "type": "integer"
             },
-            "Price": {
-              "type": "integer"
-            },
-            "Image": {
-              "type": "string"
-            },
-            "CreatedAt": {
+            "unit": {
               "type": "string"
             }
           },
           "required": [
-            "ID",
-            "IdAdmin",
-            "Name",
-            "Unit",
-            "Stock",
-            "Price",
-            "Image",
-            "CreatedAt"
+            "id",
+            "price",
+            "product_image",
+            "product_name",
+            "stock",
+            "unit"
           ]
         },
         {
           "type": "object",
           "properties": {
-            "ID": {
+            "id": {
               "type": "integer"
             },
-            "IdAdmin": {
+            "price": {
               "type": "integer"
             },
-            "Name": {
+            "product_image": {
               "type": "string"
             },
-            "Unit": {
+            "product_name": {
               "type": "string"
             },
-            "Stock": {
+            "stock": {
               "type": "integer"
             },
-            "Price": {
-              "type": "integer"
-            },
-            "Image": {
-              "type": "string"
-            },
-            "CreatedAt": {
+            "unit": {
               "type": "string"
             }
           },
           "required": [
-            "ID",
-            "IdAdmin",
-            "Name",
-            "Unit",
-            "Stock",
-            "Price",
-            "Image",
-            "CreatedAt"
+            "id",
+            "price",
+            "product_image",
+            "product_name",
+            "stock",
+            "unit"
           ]
         },
         {
           "type": "object",
           "properties": {
-            "ID": {
+            "id": {
               "type": "integer"
             },
-            "IdAdmin": {
+            "price": {
               "type": "integer"
             },
-            "Name": {
+            "product_image": {
               "type": "string"
             },
-            "Unit": {
+            "product_name": {
               "type": "string"
             },
-            "Stock": {
+            "stock": {
               "type": "integer"
             },
-            "Price": {
-              "type": "integer"
-            },
-            "Image": {
-              "type": "string"
-            },
-            "CreatedAt": {
+            "unit": {
               "type": "string"
             }
           },
           "required": [
-            "ID",
-            "IdAdmin",
-            "Name",
-            "Unit",
-            "Stock",
-            "Price",
-            "Image",
-            "CreatedAt"
+            "id",
+            "price",
+            "product_image",
+            "product_name",
+            "stock",
+            "unit"
           ]
         },
         {
           "type": "object",
           "properties": {
-            "ID": {
+            "id": {
               "type": "integer"
             },
-            "IdAdmin": {
+            "price": {
               "type": "integer"
             },
-            "Name": {
+            "product_image": {
               "type": "string"
             },
-            "Unit": {
+            "product_name": {
               "type": "string"
             },
-            "Stock": {
+            "stock": {
               "type": "integer"
             },
-            "Price": {
-              "type": "integer"
-            },
-            "Image": {
-              "type": "string"
-            },
-            "CreatedAt": {
+            "unit": {
               "type": "string"
             }
           },
           "required": [
-            "ID",
-            "IdAdmin",
-            "Name",
-            "Unit",
-            "Stock",
-            "Price",
-            "Image",
-            "CreatedAt"
+            "id",
+            "price",
+            "product_image",
+            "product_name",
+            "stock",
+            "unit"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "price": {
+              "type": "integer"
+            },
+            "product_image": {
+              "type": "string"
+            },
+            "product_name": {
+              "type": "string"
+            },
+            "stock": {
+              "type": "integer"
+            },
+            "unit": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "price",
+            "product_image",
+            "product_name",
+            "stock",
+            "unit"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "price": {
+              "type": "integer"
+            },
+            "product_image": {
+              "type": "string"
+            },
+            "product_name": {
+              "type": "string"
+            },
+            "stock": {
+              "type": "integer"
+            },
+            "unit": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "price",
+            "product_image",
+            "product_name",
+            "stock",
+            "unit"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "price": {
+              "type": "integer"
+            },
+            "product_image": {
+              "type": "string"
+            },
+            "product_name": {
+              "type": "string"
+            },
+            "stock": {
+              "type": "integer"
+            },
+            "unit": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "price",
+            "product_image",
+            "product_name",
+            "stock",
+            "unit"
           ]
         }
       ]
