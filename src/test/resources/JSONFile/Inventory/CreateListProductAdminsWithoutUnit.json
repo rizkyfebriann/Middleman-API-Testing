@@ -2,13 +2,11 @@
   "items": [
     {
       "product_id": 1,
-      "qty": 10,
-      "unit": "kg"
+      "qty": 10
     },
     {
       "product_id": 3,
-      "qty": 10,
-      "unit": "kg"
+      "qty": 10
     }
   ]
 }

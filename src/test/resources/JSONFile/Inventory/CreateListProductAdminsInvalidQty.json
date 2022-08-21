@@ -1,8 +1,13 @@
 {
   "items": [
     {
-      "product_id": 76,
-      "qty": 5.8,
+      "product_id": 1,
+      "qty": "berapa",
+      "unit": "kg"
+    },
+    {
+      "product_id": 3,
+      "qty": "berapa",
       "unit": "kg"
     }
   ]
