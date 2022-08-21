@@ -1,0 +1,12 @@
+{
+  "items": [
+    {
+      "product_id": 1,
+      "unit": "kg"
+    },
+    {
+      "product_id": 3,
+      "unit": "kg"
+    }
+  ]
+}

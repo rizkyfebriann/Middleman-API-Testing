@@ -1,8 +1,6 @@
 package Middleman.StepDefs;
 
-import Middleman.API.MiddlemanAPI_Login;
-import Middleman.API.MiddlemanAPI_Register;
-import Middleman.API.MiddlemanAPI_Users;
+import Middleman.API.*;
 import Middleman.Responses.MiddlemanResponses;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
