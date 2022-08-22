@@ -34,7 +34,7 @@ Middleman is a project for helping each store for buying some products for stock
 
 ## API Manual Test Screenshot
 
-- Login as Store
+- Login as User (Store)
 
   <img
   src="https://github.com/rizkyfebriann/Testing-API-Capstone/blob/main/image/Login%20as%20Store.PNG"
@@ -45,7 +45,7 @@ Middleman is a project for helping each store for buying some products for stock
 - Login as Admin (Distributor)
 
   <img
-  src="gambar3"
+  src="https://github.com/rizkyfebriann/Testing-API-Capstone/blob/main/image/Login%20as%20Admin.PNG"
   alt="Alt text"
   title="Login as Admin"
   style="display: inline-block; margin: 0 auto; max-width: 150px">
@@ -53,27 +53,26 @@ Middleman is a project for helping each store for buying some products for stock
 - Register for Store
 
   <img
-  src="gambar4"
+  src="https://github.com/rizkyfebriann/Testing-API-Capstone/blob/main/image/Register%20as%20Store.PNG"
   alt="Alt text"
-  title="Login as User"
+  title="Register for Store"
   style="display: inline-block; margin: 0 auto; max-width: 150px">
   
 - View Store Profile
 
   <img
-  src="gambar4"
+  src="https://github.com/rizkyfebriann/Testing-API-Capstone/blob/main/image/View%20Store%20Profile.PNG"
   alt="Alt text"
-  title="Login as User"
+  title="View Store Profile"
   style="display: inline-block; margin: 0 auto; max-width: 150px"> 
 
 - Add Product (Store)
 
   <img
-  src="gambar4"
+  src="https://github.com/rizkyfebriann/Testing-API-Capstone/blob/main/image/Add%20Product%20(User).PNG"
   alt="Alt text"
-  title="Login as User"
+  title="Add Product (Store)"
   style="display: inline-block; margin: 0 auto; max-width: 150px">  
-  
   
   
 ## API Automation Test Screenshot
