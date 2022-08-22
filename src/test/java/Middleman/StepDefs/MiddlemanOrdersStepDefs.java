@@ -297,8 +297,8 @@ public class MiddlemanOrdersStepDefs {
         MiddlemanAPI_Orders.PUTFinishOrder(id);
     }
 
-    @When("Send request get finish orders")
-    public void sendRequestGetFinishOrders() {
+    @When("Send request PUT finish orders")
+    public void sendRequestPUTFinishOrders() {
         SerenityRest.when().put(MiddlemanAPI_Orders.ADMIN_FINISH_ORDERS);
     }
 }
