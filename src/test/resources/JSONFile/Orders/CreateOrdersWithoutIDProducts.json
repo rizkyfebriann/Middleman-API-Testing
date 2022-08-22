@@ -1,0 +1,11 @@
+{
+  "grand_total": 100000,
+  "items": [
+    {
+      "product_name": "beras mantap",
+      "unit": "kg",
+      "qty": 1,
+      "subtotal": 100000
+    }
+  ]
+}

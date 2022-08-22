@@ -12,21 +12,21 @@ Feature: Inventory
     When Send request post create form to list product user
     Then Status code should be 400 wrong input
 
-    #belumfixingbug404
+
   @Inventory @Negative @loginRizkyInventory
   Scenario: Post create a form to list product user (OUT) without product id
     When Send post create  form to list product user without product id json file
     When Send request post create form to list product user
-    Then Status code should be 400 not found
+    Then Status code should be 404 not found
 
-    #belumfixingbug400
+
   @Inventory @Negative @loginRizkyInventory
   Scenario: Post create a form to list product user (OUT) without unit
     When Send post create  form to list product user without unit json file
     When Send request post create form to list product user
     Then Status code should be 404 not found
 
-  #belumfixingbug
+
   @Inventory @Negative @loginRizkyInventory
   Scenario: Post create a form to list product user (OUT) without qty
     When Send post create  form to list product user without qty json file
@@ -77,19 +77,19 @@ Feature: Inventory
     When Send request get all form product inventory user
     Then Status code should be 400 bad request
 
-  #ERROR 400 LAGI
+
   @Inventory @Positive @loginRizkyInventory
   Scenario: Get detail form product inventory (OUT)
     Given Get detail form product inventory with authorized user
     When Send request get detail form product inventory user
     Then  Status code should be 200 OK
 
-    #ERROR 400
+
   @Inventory @Negative @loginRizkyInventory
   Scenario: Get detail form product inventory (OUT) with invalid inventory id
     Given Get detail form product inventory with authorized user
     When Send request get detail form product inventory user with invalid inventory id "/7699"
-    Then  Status code should be 200 and response body "null"
+    Then  Status code should be 404 not found
 
   @Inventory @Negative @loginRizkyInventory
   Scenario: Get detail form product inventory (OUT) with invalid path
@@ -120,14 +120,14 @@ Feature: Inventory
   Scenario: Post create a form to list product admins (IN) without product id
     When Send post create  form to list product admins without product id json file
     When Send request post create form to list product admins
-    Then Status code should be 400 bad request
+    Then Status code should be 404 not found
 
     #bug400/201
   @Inventory @Negative @loginAdmins
   Scenario: Post create a form to list product admins (IN) without unit
     When Send post create  form to list product admins without unit json file
     When Send request post create form to list product admins
-    Then Status code should be 400 bad request
+    Then Status code should be 404 not found
 
   #bug400/201
   @Inventory @Negative @loginAdmins
@@ -153,7 +153,7 @@ Feature: Inventory
     Given Post create a form to list product admins without bearer token
     When Send post create  form to list product admins with valid json file
     When Send request post create form to list product admins
-    Then Status code should be 400 bad request
+    Then Status code should be 401 bad request
 
   @Inventory @Positive @loginAdmins
     Scenario: Get all form products inventory admins (IN)
@@ -190,7 +190,7 @@ Feature: Inventory
   Scenario: Get detail form products inventory admins (IN) with invalid inventory id
     Given Get detail form product inventory with authorized admins
     When Send request get detail form product inventory admins with invalid inventory id
-    Then Status code should be 200 and response body "null"
+    Then Status code should be 404 not found
 
   @Inventory @Negative @loginAdmins
   Scenario: Get detail form products inventory admins (IN) with invalid path

@@ -1,0 +1,104 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "grand_total": {
+          "type": "integer"
+        },
+        "items": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "product_id": {
+                  "type": "integer"
+                },
+                "product_name": {
+                  "type": "string"
+                },
+                "unit": {
+                  "type": "string"
+                },
+                "price": {
+                  "type": "integer"
+                },
+                "product_image": {
+                  "type": "string"
+                },
+                "qty": {
+                  "type": "integer"
+                },
+                "subtotal": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "product_id",
+                "product_name",
+                "unit",
+                "price",
+                "product_image",
+                "qty",
+                "subtotal"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "product_id": {
+                  "type": "integer"
+                },
+                "product_name": {
+                  "type": "string"
+                },
+                "unit": {
+                  "type": "string"
+                },
+                "price": {
+                  "type": "integer"
+                },
+                "product_image": {
+                  "type": "string"
+                },
+                "qty": {
+                  "type": "integer"
+                },
+                "subtotal": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "product_id",
+                "product_name",
+                "unit",
+                "price",
+                "product_image",
+                "qty",
+                "subtotal"
+              ]
+            }
+          ]
+        }
+      },
+      "required": [
+        "grand_total",
+        "items"
+      ]
+    },
+    "code": {
+      "type": "integer"
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "data",
+    "code",
+    "message"
+  ]
+}

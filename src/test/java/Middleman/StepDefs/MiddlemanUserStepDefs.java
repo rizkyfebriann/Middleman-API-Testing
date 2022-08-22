@@ -17,12 +17,26 @@ import static org.hamcrest.Matchers.equalTo;
 public class MiddlemanUserStepDefs {
     @Steps
     MiddlemanAPI_Login middlemanAPIlogin;
+    @Steps
     MiddlemanAPI_Register middlemanAPIregister;
+    @Steps
     MiddlemanAPI_Users middlemanAPIusers;
+
+    @Given("Create register user with valid json file3")
+    public void createRegisterUserWithValidJsonFile3() {
+        File jsonFilesRegisterValidUser = new File( MiddlemanAPI_Register.JSON_FILE_REGISTER+"/RegisterNewValidUser3.json");
+        middlemanAPIregister.postRegisterUser(jsonFilesRegisterValidUser);
+    }
 
     @Given("Create login user with valid json file")
     public void createLoginUserWithValidJsonFile() {
         File jsonFilesValidUser = new File( MiddlemanAPI_Login.JSON_FILE_LOGIN+"/ValidLoginUser2.json");
+        middlemanAPIlogin.postLoginUserOrAdmin(jsonFilesValidUser);
+    }
+
+    @Given("Create login user with valid json file3")
+    public void createLoginUserWithValidJsonFile3() {
+        File jsonFilesValidUser = new File( MiddlemanAPI_Login.JSON_FILE_LOGIN+"/ValidLoginUser3.json");
         middlemanAPIlogin.postLoginUserOrAdmin(jsonFilesValidUser);
     }
 
@@ -32,8 +46,8 @@ public class MiddlemanUserStepDefs {
         middlemanAPIregister.postRegisterUser(jsonFilesRegisterValidUser);
     }
 //GET USER
-    @Given("Set authorization with valid bearer token")
-    public void setAuthorizationWithValidBearerToken() {
+    @Given("Set request get user with valid bearer token")
+    public void setRequestGetUserWithValidBearerToken() {
         middlemanAPIusers.getUserWithValidToken();
     }
     @When("Send request get user")
@@ -45,9 +59,10 @@ public class MiddlemanUserStepDefs {
         File jsonFileValidUserValidation = new File(MiddlemanAPI_Users.JSON_FILE_USER+"/GetUserValidation.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonFileValidUserValidation));
     }
+
 //Get Invalid User
-    @Given("Set authorization with invalid bearer token")
-    public void setAuthorizationWithInvalidBearerToken() {
+    @Given("Set request get user with invalid bearer token")
+    public void setRequestGetUserWithInvalidBearerToken() {
         middlemanAPIusers.getUserWithInvalidToken();
     }
 
@@ -60,6 +75,7 @@ public class MiddlemanUserStepDefs {
     public void setRequestGetUserWithoutBearerToken() {
         middlemanAPIusers.getUserWithoutToken();
     }
+
 
 //Get User Invalid Path
     @Given("Set request get user with invalid path")
@@ -128,6 +144,12 @@ public class MiddlemanUserStepDefs {
         middlemanAPIusers.putUserWithvalidToken(jsonFilesValidUser);
     }
 
+    @Given("Set request update user with phone number<10")
+    public void setRequestUpdateUserWithPhoneNumber() {
+        File jsonFilesValidUser = new File( MiddlemanAPI_Users.JSON_FILE_USER+"/UpdateUserWithPhoneKurangDari10.json");
+        middlemanAPIusers.putUserWithvalidToken(jsonFilesValidUser);
+    }
+
 //Delete User
     @Given("Set request delete user with register user")
     public void setRequestDeleteUserWithRegisterUser() {
@@ -159,4 +181,9 @@ public class MiddlemanUserStepDefs {
         SerenityRest.when().delete(MiddlemanAPI_Users.DELETE_USER_INVALID_PATH);
     }
 
+    @Given("Create login user with valid json file4")
+    public void createLoginUserWithValidJsonFile4() {
+        File jsonFilesValidUser = new File( MiddlemanAPI_Login.JSON_FILE_LOGIN+"/ValidLoginUser4.json");
+        middlemanAPIlogin.postLoginUserOrAdmin(jsonFilesValidUser);
+    }
 }

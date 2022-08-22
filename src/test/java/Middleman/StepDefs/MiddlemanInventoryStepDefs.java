@@ -108,7 +108,8 @@ public class MiddlemanInventoryStepDefs {
 
     @When("Send request post create form to list product admins")
     public void sendRequestPostCreateFormToListProductAdmins() {
-        SerenityRest.when().post(MiddlemanAPI_Inventory.POST_CREATE_LIST_ADMINS);
+        Response response = SerenityRest.when().post(MiddlemanAPI_Inventory.POST_CREATE_LIST_ADMINS);
+        response.prettyPrint();
     }
 
     @When("Send post create  form to list product admins with invalid qty json file")
