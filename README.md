@@ -34,7 +34,7 @@ Middleman is a project for helping each store for buying some products for stock
 
 ## API Manual Test Screenshot
 
-- Create New User
+- Login as Store
 
   <img
   src="gambar2"
@@ -42,7 +42,7 @@ Middleman is a project for helping each store for buying some products for stock
   title="Create New User"
   style="display: inline-block; margin: 0 auto; max-width: 150px">
   
-- Login as Admin
+- Login as Admin (Distributor)
 
   <img
   src="gambar3"
@@ -50,7 +50,7 @@ Middleman is a project for helping each store for buying some products for stock
   title="Login as Admin"
   style="display: inline-block; margin: 0 auto; max-width: 150px">
   
-- Login as User
+- Register for Store
 
   <img
   src="gambar4"
@@ -58,20 +58,66 @@ Middleman is a project for helping each store for buying some products for stock
   title="Login as User"
   style="display: inline-block; margin: 0 auto; max-width: 150px">
   
-  
-  
+- View Store Profile
 
+  <img
+  src="gambar4"
+  alt="Alt text"
+  title="Login as User"
+  style="display: inline-block; margin: 0 auto; max-width: 150px"> 
+
+- Add Product (Store)
+
+  <img
+  src="gambar4"
+  alt="Alt text"
+  title="Login as User"
+  style="display: inline-block; margin: 0 auto; max-width: 150px"> 
+  
+- Update Product (Store)
+
+  <img
+  src="gambar4"
+  alt="Alt text"
+  title="Login as User"
+  style="display: inline-block; margin: 0 auto; max-width: 150px">  
+  
+  
+  
 ## API Automation Test Screenshot
 
-- Add New Payment
-<img
+- Add Product (Admin)
+
+  <img
   src="gambar5"
   alt="Alt text"
   title="Add New Payment"
   style="display: inline-block; margin: 0 auto; max-width: 50px">
   
-- All Review
-<img
+- Update Product (Admin)
+
+  <img
+  src="gambar 6"
+  alt="Alt text"
+  title="All Review"
+  style="display: inline-block; margin: 0 auto; max-width: 50px">  
+  
+- Add To Cart
+  <img
+  src="gambar 6"
+  alt="Alt text"
+  title="All Review"
+  style="display: inline-block; margin: 0 auto; max-width: 50px">  
+  
+- Update Qty Product On Cart
+  <img
+  src="gambar 6"
+  alt="Alt text"
+  title="All Review"
+  style="display: inline-block; margin: 0 auto; max-width: 50px">  
+  
+- Create Order
+  <img
   src="gambar 6"
   alt="Alt text"
   title="All Review"
