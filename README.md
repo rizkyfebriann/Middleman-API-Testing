@@ -72,14 +72,6 @@ Middleman is a project for helping each store for buying some products for stock
   src="gambar4"
   alt="Alt text"
   title="Login as User"
-  style="display: inline-block; margin: 0 auto; max-width: 150px"> 
-  
-- Update Product (Store)
-
-  <img
-  src="gambar4"
-  alt="Alt text"
-  title="Login as User"
   style="display: inline-block; margin: 0 auto; max-width: 150px">  
   
   
@@ -103,6 +95,7 @@ Middleman is a project for helping each store for buying some products for stock
   style="display: inline-block; margin: 0 auto; max-width: 50px">  
   
 - Add To Cart
+
   <img
   src="gambar 6"
   alt="Alt text"
@@ -110,6 +103,7 @@ Middleman is a project for helping each store for buying some products for stock
   style="display: inline-block; margin: 0 auto; max-width: 50px">  
   
 - Update Qty Product On Cart
+
   <img
   src="gambar 6"
   alt="Alt text"
@@ -117,6 +111,7 @@ Middleman is a project for helping each store for buying some products for stock
   style="display: inline-block; margin: 0 auto; max-width: 50px">  
   
 - Create Order
+
   <img
   src="gambar 6"
   alt="Alt text"
