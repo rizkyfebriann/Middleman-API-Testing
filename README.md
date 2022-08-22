@@ -37,9 +37,9 @@ Middleman is a project for helping each store for buying some products for stock
 - Login as Store
 
   <img
-  src="gambar2"
+  src="https://github.com/rizkyfebriann/Testing-API-Capstone/blob/main/image/Login%20as%20Store.PNG"
   alt="Alt text"
-  title="Create New User"
+  title="Login as Store"
   style="display: inline-block; margin: 0 auto; max-width: 150px">
   
 - Login as Admin (Distributor)
