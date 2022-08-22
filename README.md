@@ -77,44 +77,44 @@ Middleman is a project for helping each store for buying some products for stock
   
 ## API Automation Test Screenshot
 
-- Add Product (Admin)
+- Login as Admin
 
   <img
-  src="gambar5"
+  src="https://github.com/rizkyfebriann/Testing-API-Capstone/blob/main/image/Automation%20Login%20Admin.PNG"
   alt="Alt text"
-  title="Add New Payment"
+  title="Login as Admin"
   style="display: inline-block; margin: 0 auto; max-width: 50px">
   
 - Update Product (Admin)
 
   <img
-  src="gambar 6"
+  src="https://github.com/rizkyfebriann/Testing-API-Capstone/blob/main/image/Admin%20Update%20product.PNG"
   alt="Alt text"
-  title="All Review"
+  title="Update Product (Admin)"
   style="display: inline-block; margin: 0 auto; max-width: 50px">  
   
 - Add To Cart
 
   <img
-  src="gambar 6"
+  src="https://github.com/rizkyfebriann/Testing-API-Capstone/blob/main/image/automation%20API%20add%20to%20cart.PNG"
   alt="Alt text"
-  title="All Review"
+  title="Add To Cart"
   style="display: inline-block; margin: 0 auto; max-width: 50px">  
   
 - Update Qty Product On Cart
 
   <img
-  src="gambar 6"
+  src="https://github.com/rizkyfebriann/Testing-API-Capstone/blob/main/image/Update%20cart%20automation.PNG"
   alt="Alt text"
-  title="All Review"
+  title="Update Qty Product On Cart"
   style="display: inline-block; margin: 0 auto; max-width: 50px">  
   
 - Create Order
 
   <img
-  src="gambar 6"
+  src="https://github.com/rizkyfebriann/Testing-API-Capstone/blob/main/image/create%20order%20automation.PNG"
   alt="Alt text"
-  title="All Review"
+  title="Create Order"
   style="display: inline-block; margin: 0 auto; max-width: 50px">  
   
   
