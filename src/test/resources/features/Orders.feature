@@ -12,7 +12,7 @@ Feature: Orders
     When Send request create orders
     Then API response status code should be 401 unauthorized
 
-  @orders @loginUserValidTesting
+  @Createorders @loginUserValidTesting
   Scenario: Create orders with valid 1 products
     Given create order with valid one products
     When Send request create orders
