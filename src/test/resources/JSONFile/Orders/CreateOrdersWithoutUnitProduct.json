@@ -1,11 +1,23 @@
 {
-  "grand_total": 100000,
+  "grand_total": 1337000,
   "items": [
     {
       "product_id": 36,
-      "product_name": "beras mantap",
-      "qty": 1,
-      "subtotal": 100000
+      "product_name": "Beras Maknyuss Sak (5 kg)",
+      "qty": 2,
+      "subtotal": 134000
+    },
+    {
+      "product_id": 38,
+      "product_name": "Kecap ABC 135 ml Dus (isi 48)",
+      "qty": 2,
+      "subtotal": 822000
+    },
+    {
+      "product_id": 41,
+      "product_name": "Cimory UHT 250 ml Rasa Chocolate Dus (isi 24)",
+      "qty": 3,
+      "subtotal": 381000
     }
   ]
 }
