@@ -239,13 +239,13 @@ Feature: Orders
 
   @orders @loginUserValidTesting
   Scenario: User get detail orders with valid id order from existing user
-    Given get detail order with id "1661001285"
+    Given get detail order with id "1661176887"
     When Send request get detail orders
     Then API response status code should be 200 OK
 
   @orders @loginUserValidTesting
   Scenario: User get detail orders with valid id order from other user
-    Given get detail order with id "1661001300"
+    Given get detail order with id "1661001378"
     When Send request get detail orders
     Then API response status code should be 404 not found
 
@@ -257,7 +257,7 @@ Feature: Orders
 
   @orders @loginUserValidTesting
   Scenario: User get detail orders on invalid path
-    Given get detail order with id "1661001285"
+    Given get detail order with id "1661176887"
     When Send request get detail orders on invalid path
     Then API response status code should be 404 not found
 
@@ -275,7 +275,7 @@ Feature: Orders
 
   @orders @loginAdmins
   Scenario: Admin get detail orders with valid id order
-    Given get detail order with id "1661001285"
+    Given get detail order with id "1661176887"
     When Send request get detail orders
     Then API response status code should be 200 OK
 
@@ -287,7 +287,7 @@ Feature: Orders
 
   @orders @loginAdmins
   Scenario: Admin get detail orders on invalid path
-    Given get detail order with id "1661001285"
+    Given get detail order with id "1661176887"
     When Send request get detail orders on invalid path
     Then API response status code should be 404 not found
 
@@ -310,7 +310,7 @@ Feature: Orders
 
   @orders @loginAdmins
   Scenario: Admin confirm orders with valid id order
-    Given PUT confirm orders on admin with id orders "1661001285"
+    Given PUT confirm orders on admin with id orders "1661268520"
     When Send request PUT confirm orders
     Then API response status code should be 200 OK
 
@@ -322,7 +322,7 @@ Feature: Orders
 
   @orders @loginAdmins
   Scenario: Admin finish orders with valid id order
-    Given PUT finish orders on admin with id orders "1661001285"
+    Given PUT finish orders on admin with id orders "1661204517"
     When Send request PUT finish orders
     Then API response status code should be 200 OK
 

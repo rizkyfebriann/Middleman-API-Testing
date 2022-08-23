@@ -1,12 +1,26 @@
 {
-  "grand_total": 100000,
+  "grand_total": 1337000,
   "items": [
     {
       "product_id": 36,
-      "product_name": "beras LOL",
-      "unit": "kg",
-      "qty": 1,
-      "subtotal": 100000
+      "product_name": "Beras Maknyus",
+      "unit": "Sak",
+      "qty": 2,
+      "subtotal": 134000
+    },
+    {
+      "product_id": 38,
+      "product_name": "Kecap ABC",
+      "unit": "Dus",
+      "qty": 2,
+      "subtotal": 822000
+    },
+    {
+      "product_id": 41,
+      "product_name": "Cimory UHT",
+      "unit": "Dus",
+      "qty": 3,
+      "subtotal": 381000
     }
   ]
 }

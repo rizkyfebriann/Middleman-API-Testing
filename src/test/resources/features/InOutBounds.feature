@@ -54,11 +54,11 @@ Feature: InOutBounds
     When Send request create a cart on inoutbounds
     Then API response status code should be 400 bad request
 
-  @inoutbounds @loginAdmins
-  Scenario: Create a carts on inoutbounds with authorized admin (haven't adding product yet)
-    Given create a cart on inoutbounds with authorized admin with valid json file
-    When Send request create a cart on inoutbounds
-    Then API response status code should be 404 not found
+#  @inoutbounds @loginAdmins
+#  Scenario: Create a carts on inoutbounds with authorized admin (haven't adding product yet)
+#    Given create a cart on inoutbounds with authorized admin with valid json file
+#    When Send request create a cart on inoutbounds
+#    Then API response status code should be 404 not found
 
   @inoutbounds @loginAdmins
   Scenario: Create a carts on inoutbounds with authorized admin (already added product)
@@ -108,17 +108,17 @@ Feature: InOutBounds
     When Send request create a cart on inoutbounds on invalid path
     Then API response status code should be 404 not found
 
-  @inoutbounds
-  Scenario: Get all carts on inoutbounds (unauthorized user/admin)
-    Given get all cart on inoutbounds without any authorization
-    When Send request get all cart on inoutbounds
-    Then API response status code should be 400 bad request
+#  @inoutbounds
+#  Scenario: Get all carts on inoutbounds (unauthorized user/admin)
+#    Given get all cart on inoutbounds without any authorization
+#    When Send request get all cart on inoutbounds
+#    Then API response status code should be 400 bad request
 
   @inoutbounds @loginRizkyUser1
   Scenario: Get all carts on inoutbounds with authorized rizky user (haven't adding product yet)
     Given get all cart on inoutbounds with authorized rizky user
     When Send request get all cart on inoutbounds
-    Then API response status code should be 404 not found
+    Then API response status code should be 200 OK
 
   @inoutbounds @loginRizkyUser
   Scenario: Get all carts on inoutbounds with authorized rizky user (already added product)
@@ -260,6 +260,6 @@ Feature: InOutBounds
 
   @inoutbounds @loginAdmins
   Scenario: Delete product added on cart inoutbounds with authorized admin which product id found
-    Given admin delete product id "1" added on inoutbounds
+    Given admin delete product id "6" added on inoutbounds
     When Send request delete product added on inoutbounds
     Then API response status code should be 204 no content

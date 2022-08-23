@@ -59,4 +59,4 @@ Feature: Register
   Scenario: Post register user on invalid path
     Given Post register user with valid json file
     When Send request post register user on invalid path
-    Then API response status code should be 400 bad request
+    Then API response status code should be 404 not found

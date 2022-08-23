@@ -1,11 +1,23 @@
 {
-  "grand_total": 100000,
+  "grand_total": 1337000,
   "items": [
     {
       "product_id": 36,
-      "unit": "kg",
-      "qty": 1,
-      "subtotal": 100000
+      "unit": "Sak",
+      "qty": 2,
+      "subtotal": 134000
+    },
+    {
+      "product_id": 38,
+      "unit": "Dus",
+      "qty": 2,
+      "subtotal": 822000
+    },
+    {
+      "product_id": 41,
+      "unit": "Dus",
+      "qty": 3,
+      "subtotal": 381000
     }
   ]
 }
