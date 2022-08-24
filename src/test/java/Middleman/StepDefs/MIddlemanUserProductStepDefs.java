@@ -3,6 +3,7 @@ package Middleman.StepDefs;
 import Middleman.API.MiddlemanAPI_Admins;
 import Middleman.API.MiddlemanAPI_UserProduct;
 import Middleman.API.MiddlemanAPI_Users;
+import Middleman.Constant;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
@@ -221,10 +222,11 @@ public class MIddlemanUserProductStepDefs {
         middlemanAPIUserProduct.putProductUserWithValidToken(jsonFiles, price);
     }
 
-//    @Given("Update product user with price not valid on id {int}")
-//    public void updateProductUserWithPriceNotValidOnId(int idProduct) {
-//        File jsonFiles = new File(MiddlemanAPI.JSON_FILE_USER_PRODUCT + "/UpdateProductUserWithPriceNotValid.json");
-//        middlemanAPI.putProductUserWithValidToken(jsonFiles, idProduct);
-//
-//    }
+
+
+
+    @Given("Get search product user with id {string} on invalid path")
+    public static void searchWithInvalidPath(String invalidPath) {
+        MiddlemanAPI_UserProduct.GET_SEARCH_PRODUCT_USER_INVALID_PATH = Constant.URL+"/users/" + invalidPath + "/search?productname=";
+    }
 }
