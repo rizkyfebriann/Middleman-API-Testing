@@ -120,9 +120,7 @@ Middleman is a project for helping each store for buying some products for stock
   
   ## API Automation Test Video
       
-    
-
-
+    [Click On Here](https://youtu.be/5J3eaXz9Wug)
 
 
 
