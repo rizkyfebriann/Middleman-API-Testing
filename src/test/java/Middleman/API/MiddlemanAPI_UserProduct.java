@@ -49,15 +49,8 @@ public class MiddlemanAPI_UserProduct {
     @Step("Get product user without token")
     public void getProductUserWithoutToken(){
         SerenityRest.given()
-                .headers("Authorization", TOKEN_ERNAUSER);
+                .headers("Authorization", "");
     }
-
-//    @Step("Get search product user")
-//    public static void getSearchProductUser(String productname) {
-//        SerenityRest.given()
-//                .queryParam("productname",productname)
-//                .headers("Authorization", TOKEN_ERNAUSER);
-//    }
 
     @Step("Get search product user")
     public static void getSearchProductUser(String productname) {
