@@ -68,22 +68,23 @@ Feature: Cart
     When Send request get all cart with invalid path
     Then API response status code should be 404 not found
 
-  @cart @loginErnaUser
-  Scenario: Update qty of products added in cart (authorized user)
-    Given Update qty in cart with product id "1"
-    When Send request update qty product added on cart
-    Then API response status code should be 200 OK
+#  nosuccess  id ga ketemu harus di ganti
+#  @cart @loginErnaUser
+#  Scenario: Update qty of products added in cart (authorized user)
+#    Given Update qty in cart with product id "26"
+#    When Send request update qty product added on cart
+#    Then API response status code should be 200 OK
 
   @cart @loginErnaUser
   Scenario: Update qty of products added in cart (authorized user)
-    Given Update qty in cart with product id "1"
+    Given Update qty in cart with product id "16"
     When Send request update qty product added on cart
     Then API response status code should be 200 OK
     And response body should contains code 200 and message "success"
 
   @cart @loginErnaUser
   Scenario: Update qty of products added in cart (authorized user) with invalid product id
-    Given Update qty in cart with invalid product id "100"
+    Given Update qty in cart with invalid product id "1000"
     When Send request update qty product added on cart
     Then API response status code should be 404 not found
 
@@ -95,19 +96,19 @@ Feature: Cart
 
   @cart @loginErnaUser
   Scenario: Update qty of products added in cart (authorized user) with empty qty
-    Given Update product id "1" in cart with empty qty
+    Given Update product id "5" in cart with empty qty
     When Send request update qty product added on cart
     Then API response status code should be 400 bad request
 
-#  @user @loginErnaUser
-#  Scenario: Delete qty of product on cart (authorized user) with valid id product
-#    Given Set request Delete qty in cart with product id "4"
-#    When Send request delete product on cart
-#    Then API response status code should be 200 OK
+  @user @loginErnaUser
+  Scenario: Delete qty of product on cart (authorized user) with valid id product
+    Given Set request Delete qty in cart with product id "6"
+    When Send request delete product on cart
+    Then API response status code should be 200 OK
 
   @user @cart
   Scenario: Delete qty of product on cart with valid id product (unauthorized user)
-    Given Set request Delete qty in cart with product id "4"
+    Given Set request Delete qty in cart with product id "5"
     When Send request delete product on cart
     Then API response status code should be 400 bad request
 
