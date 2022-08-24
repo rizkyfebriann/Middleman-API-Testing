@@ -25,7 +25,7 @@ public class MiddlemanAPI_UserProduct {
 
     public static String GET_SEARCH_PRODUCT_USER = Constant.URL+"/users/products/search?productname=";
     public static String GET_SEARCH_PRODUCT_USER_INVALID_PATH = Constant.URL+"/users/productsss/search?productname=";
-//    public static String GET_SEARCH_PRODUCT_USER_TWO_ALPHABET = Constant.URL+"/users/products/search?productname=gu";
+    public static String GET_SEARCH_PRODUCT_USER_TWO_ALPHABET = Constant.URL+"/users/products/search?productname=gula";
 //    public static String GET_SEARCH_PRODUCT_USER_WITH_NUMERIC = Constant.URL+"/users/products/search?productname=12";
 //    public static String GET_SEARCH_PRODUCT_USER_SPECIAL_CHART = Constant.URL+"/users/products/search?productname=@";
 //    public static String GET_SEARCH_PRODUCT_USER_COMBINATION = Constant.URL+"/users/products/search?productname=gula1";
@@ -42,7 +42,7 @@ public class MiddlemanAPI_UserProduct {
     @Step("Get product user with invalid token")
     public void getProductUserWithInvalidToken(){
         SerenityRest.given()
-                .headers("Authorization", TOKEN_ERNAUSER);
+                .headers("Authorization", "Bearer" + "invalid1234567io");
     }
     @Step("Get product user without token")
     public void getProductUserWithoutToken(){
@@ -50,10 +50,18 @@ public class MiddlemanAPI_UserProduct {
                 .headers("Authorization", TOKEN_ERNAUSER);
     }
 
+//    @Step("Get search product user")
+//    public static void getSearchProductUser(String productname) {
+//        SerenityRest.given()
+//                .queryParam("productname",productname)
+//                .headers("Authorization", TOKEN_ERNAUSER);
+//    }
+
     @Step("Get search product user")
-    public static void getSearchProductUser(String productName) {
+    public static void getSearchProductUser(String productname) {
         SerenityRest.given()
-                .queryParam("productname",productName);
+                .headers("Authorization", TOKEN_ERNAUSER)
+                .queryParam("productname",productname);
     }
 
     @Step("Post product user with valid token")
@@ -128,6 +136,34 @@ public class MiddlemanAPI_UserProduct {
         SerenityRest.given()
                 .pathParam("id", idProduct)
                 .headers("Authorization", TOKEN_ERNAUSER);
+    }
+
+
+    @Step("Put update product user without price")
+    public static void putUpdateProductUserWithoutPrice(File json, int id) {
+        JsonPath jsonPath = new JsonPath(json);
+        SerenityRest.given()
+                .pathParam("id", id)
+                .header("Authorization", TOKEN_ERNAUSER)
+                .multiPart("product_image", new File(IMAGE_FOLDER + "/gula_pasir.jpeg"))
+                .formParam("product_name",jsonPath.get("product_name").toString())
+                .formParam("unit", jsonPath.get("unit").toString())
+                .formParam("stock",jsonPath.get("stock").toString())
+                .formParam("price", jsonPath.get("price").toString())
+        ;
+    }
+    @Step("Put update product user without image")
+    public static void putUpdateProductUserWithoutImage(File json, int id) {
+        JsonPath jsonPath = new JsonPath(json);
+        SerenityRest.given()
+                .pathParam("id", id)
+                .header("Authorization", TOKEN_ERNAUSER)
+                .multiPart("product_image", new File(IMAGE_FOLDER + "/gula_pasir.jpeg"))
+                .formParam("product_name",jsonPath.get("product_name").toString())
+                .formParam("unit", jsonPath.get("unit").toString())
+                .formParam("stock",jsonPath.get("stock").toString())
+                .formParam("price", jsonPath.get("price").toString())
+        ;
     }
 
 }

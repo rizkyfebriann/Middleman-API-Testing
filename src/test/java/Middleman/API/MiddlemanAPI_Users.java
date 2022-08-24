@@ -32,6 +32,7 @@ public class MiddlemanAPI_Users {
         SerenityRest.given()
                 .headers("Authorization", TOKEN_ERNAUSER);
     }
+
     @Step("Get user without token")
     public void getUserWithoutToken(){
         SerenityRest.given()

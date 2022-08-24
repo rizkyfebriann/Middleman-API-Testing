@@ -2,5 +2,6 @@
   "product_name": "gula pasir",
   "unit" :"2 kg",
   "stock": 20,
-  "price" : 200000
+  "price" : 200000,
+  "image": ""
 }
