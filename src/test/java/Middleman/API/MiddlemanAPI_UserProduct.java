@@ -12,6 +12,8 @@ import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.Steps;
 
 public class MiddlemanAPI_UserProduct {
+
+    public static final String INVALID_TOKEN = "Bearer invalid1234567io";
     public static String TOKEN_ERNAUSER = "";
     public static final String JSON_FILE_USER_PRODUCT = Constant.DIR+"/src/test/resources/JSONFile/User_Product";
     public static String IMAGE_FOLDER = Constant.DIR+ "/src/test/resources/Image";
@@ -47,15 +49,8 @@ public class MiddlemanAPI_UserProduct {
     @Step("Get product user without token")
     public void getProductUserWithoutToken(){
         SerenityRest.given()
-                .headers("Authorization", TOKEN_ERNAUSER);
+                .headers("Authorization", "");
     }
-
-//    @Step("Get search product user")
-//    public static void getSearchProductUser(String productname) {
-//        SerenityRest.given()
-//                .queryParam("productname",productname)
-//                .headers("Authorization", TOKEN_ERNAUSER);
-//    }
 
     @Step("Get search product user")
     public static void getSearchProductUser(String productname) {
@@ -69,6 +64,18 @@ public class MiddlemanAPI_UserProduct {
         JsonPath jsonPath = new JsonPath(json);
         SerenityRest.given()
                 .headers("Authorization", TOKEN_ERNAUSER)
+                .multiPart("product_image", new File(IMAGE_FOLDER + "/gula_tebu.jpeg"))
+                .formParam("product_name",jsonPath.get("product_name").toString())
+                .formParam("unit",jsonPath.get("unit").toString())
+                .formParam("stock",jsonPath.get("stock").toString())
+                .formParam("price",jsonPath.get("price").toString());
+    }
+
+    @Step("Post product user with invalid token")
+    public static void postProductUserWithInvalidToken(File json) {
+        JsonPath jsonPath = new JsonPath(json);
+        SerenityRest.given()
+                .headers("Authorization", INVALID_TOKEN)
                 .multiPart("product_image", new File(IMAGE_FOLDER + "/gula_tebu.jpeg"))
                 .formParam("product_name",jsonPath.get("product_name").toString())
                 .formParam("unit",jsonPath.get("unit").toString())
@@ -135,7 +142,7 @@ public class MiddlemanAPI_UserProduct {
     public void deleteProductUserWithInvalidToken(int idProduct){
         SerenityRest.given()
                 .pathParam("id", idProduct)
-                .headers("Authorization", TOKEN_ERNAUSER);
+                .headers("Authorization", INVALID_TOKEN);
     }
 
 
