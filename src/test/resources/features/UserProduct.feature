@@ -13,12 +13,11 @@ Feature: User_Product
     When Send request post product user
     Then API response status code should be 400 bad request
 
- #    BUG
   @user_product @invalidTokenErnaUSer
   Scenario: Create product user with invalid token
     Given Create product user with invalid token
     When Send request post product user
-    Then API response status code should be 400 Unauthorized
+    Then API response status code should be 401 Unauthorized
 
 #    BUG
   @user_product @loginErnaUser
@@ -116,7 +115,7 @@ Feature: User_Product
   Scenario: Delete product user with invalid token
     Given Set request delete product user with id 78 on invalid token
     When Send request delete product user
-    Then API response status code should be 400 bad request
+    Then API response status code should be 401 Unauthorized
 
 #  @user_product @loginErnaUser
 #  Scenario: Delete product user with valid token & registered id product

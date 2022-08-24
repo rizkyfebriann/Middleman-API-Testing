@@ -18,7 +18,10 @@ import static Middleman.API.MiddlemanAPI_InOutBounds.URL;
 public class HookLogin3 {
     @Before("@invalidTokenErnaUser")
     public void invalidTokenErnaUser(){
-        MiddlemanAPI_Users.TOKEN_ERNAUSER = "Bearer invalid1234567io";
+        String invalidToken = "Bearer invalid1234567io";
+        MiddlemanAPI_Users.TOKEN_ERNAUSER = invalidToken;
+        MiddlemanAPI_UserProduct.TOKEN_ERNAUSER = invalidToken;
+        MiddlemanAPI_Cart.TOKEN_ERNAUSER = invalidToken;
     }
 
     @Before("@loginErnaUser")

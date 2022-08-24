@@ -43,6 +43,7 @@ public class MiddlemanLoginStepDefs {
         SerenityRest.then().statusCode(badRequest);
     }
 
+
     @Given("Post login admin with valid json file")
     public void postLoginAdminWithValidJsonFile() {
         File jsonFilesValidAdmin = new File( MiddlemanAPI_Login.JSON_FILE_LOGIN+"/ValidLoginAdmin.json");
