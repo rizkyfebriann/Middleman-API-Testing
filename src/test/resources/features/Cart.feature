@@ -99,25 +99,25 @@ Feature: Cart
     When Send request update qty product added on cart
     Then API response status code should be 400 bad request
 
-  @user @loginErnaUser
-  Scenario: Delete qty of product on cart (authorized user) with valid id product
-    Given Set request Delete qty in cart with product id "4"
-    When Send request delete product on cart
-    Then API response status code should be 200 OK
+#  @user @loginErnaUser
+#  Scenario: Delete qty of product on cart (authorized user) with valid id product
+#    Given Set request Delete qty in cart with product id "4"
+#    When Send request delete product on cart
+#    Then API response status code should be 200 OK
 
-  @user
+  @user @cart
   Scenario: Delete qty of product on cart with valid id product (unauthorized user)
     Given Set request Delete qty in cart with product id "4"
     When Send request delete product on cart
     Then API response status code should be 400 bad request
 
-  @user @loginErnaUser
+  @user @loginErnaUser @cart
   Scenario: Delete qty of product on cart with product id not found (authorized user)
-    Given Set request Delete qty in cart with product id "100"
+    Given Set request Delete qty in cart with product id "1000"
     When Send request delete product on cart
     Then API response status code should be 404 not found
 
-  @user @loginErnaUser
+  @user @loginErnaUser @cart
   Scenario: Delete qty product on cart with invalid endpoint
     Given Delete qty in cart with product id "6" on invalid path
     When Send request delete product on cart with invalid path

@@ -67,8 +67,8 @@ public class MiddlemanUserStepDefs {
     }
 
     @Then("API response status code should be {int} Unauthorized")
-    public void apiResponseStatusCodeShouldBeUnauthorized(int unauthorized) {
-        SerenityRest.then().statusCode(unauthorized);
+    public void apiResponseStatusCodeShouldBeUnauthorized(int Unauthorized) {
+        SerenityRest.then().statusCode(Unauthorized);
     }
 //Get User without token
     @Given("Set request get user without bearer token")
@@ -144,8 +144,8 @@ public class MiddlemanUserStepDefs {
         middlemanAPIusers.putUserWithvalidToken(jsonFilesValidUser);
     }
 
-    @Given("Set request update user with phone number<10")
-    public void setRequestUpdateUserWithPhoneNumber() {
+    @Given("Set request update user with phone number less then ten")
+    public void setRequestUpdateUserWithPhoneNumberLessThenTen() {
         File jsonFilesValidUser = new File( MiddlemanAPI_Users.JSON_FILE_USER+"/UpdateUserWithPhoneKurangDari10.json");
         middlemanAPIusers.putUserWithvalidToken(jsonFilesValidUser);
     }
@@ -183,7 +183,7 @@ public class MiddlemanUserStepDefs {
 
     @Given("Create login user with valid json file4")
     public void createLoginUserWithValidJsonFile4() {
-        File jsonFilesValidUser = new File( MiddlemanAPI_Login.JSON_FILE_LOGIN+"/ValidLoginUser4.json");
+        File jsonFilesValidUser = new File( MiddlemanAPI_Login.JSON_FILE_LOGIN+"/ValidLoginUser3.json");
         middlemanAPIlogin.postLoginUserOrAdmin(jsonFilesValidUser);
     }
 }

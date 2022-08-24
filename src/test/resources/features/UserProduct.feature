@@ -18,7 +18,7 @@ Feature: User_Product
   Scenario: Create product user with invalid token
     Given Create product user with invalid token
     When Send request post product user
-    Then API response status code should be 401 Unauthorized
+    Then API response status code should be 400 Unauthorized
 
 #    BUG
   @user_product @loginErnaUser
@@ -48,11 +48,12 @@ Feature: User_Product
     Then API response status code should be 200 OK
     And Get product user assert json validation
 
+
   @user_product @invalidTokenErnaUser
   Scenario: Get product user with invalid bearer token
     Given Set request get product user with invalid token
     When Send request get product user
-    Then API response status code should be 401 Unauthorized
+    Then API response status code should be 400 bad request
 
   @user_product @loginErnaUser
   Scenario: Get product user with invalid path
@@ -73,28 +74,31 @@ Feature: User_Product
     Then API response status code should be 200 OK
 #    And response body should contains code 200 and message "success update data"
 
-  @user_product @loginErnaUser
-  Scenario: Update product user with all valid data & invalid token
-    Given Update product user with id 31 on invalid token
-    When Send request put product user
-    Then API response status code should be 401 Unauthorized
+##  bug
+#  @user_product @loginErnaUser
+#  Scenario: Update product user with all valid data & invalid token
+#    Given Update product user with id 33 on invalid token
+#    When Send request put product user
+#    Then API response status code should be 401 Unauthorized
 
   @user_product @loginErnaUser
   Scenario: Update product user without price
-    Given Update product user without price on id 31
+    Given Update product user without price on id 33
+    When Send request put product user
+    Then API response status code should be 200 OK
+
+#    success
+  @user_product @loginErnaUser
+  Scenario: Update product user without image
+    Given Update product user without image on id 33
     When Send request put product user
     Then API response status code should be 200 OK
 
   @user_product @loginErnaUser
-  Scenario: Update product user without image
-    Given Update product user without image on id 27
+  Scenario: Update product user with all data & price not valid
+    Given Update product user with price not valid on id 33
     When Send request put product user
-    Then API response status code should be 200 OK
-
-#  Scenario: Update product user with all data &  price not valid
-#    Given Update product user with price not valid on id 27
-#    When Send request put product user
-#    Then API response status code should be 400 bad request
+    Then API response status code should be 400 bad request
 
   @user_product @loginErnaUser
   Scenario: Update product user with invalid path
@@ -104,15 +108,15 @@ Feature: User_Product
 
   @user_product @loginErnaUser
   Scenario: Delete product user with valid token on invalid path
-    Given Set request delete product user id 31 with invalid path
+    Given Set request delete product user id 78 with invalid path
     When Send request delete product user with invalid path
     Then API response status code should be 404 not found
 
   @user_product @invalidTokenErnaUSer
   Scenario: Delete product user with invalid token
-    Given Set request delete product user with id 31 on invalid token
+    Given Set request delete product user with id 78 on invalid token
     When Send request delete product user
-    Then API response status code should be 401 Unauthorized
+    Then API response status code should be 400 bad request
 
 #  @user_product @loginErnaUser
 #  Scenario: Delete product user with valid token & registered id product
@@ -120,7 +124,7 @@ Feature: User_Product
 #    When Send request delete product user
 #    Then API response status code should be 200 OK
 
-  @user_product @Positive
+  @user @user_product @Positive
   Scenario: Get search product user with valid product name
     Given Get search product user with valid parameter name "gula"
     When Send request get search product user

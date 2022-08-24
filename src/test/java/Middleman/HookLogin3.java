@@ -1,6 +1,7 @@
 package Middleman;
 
 import Middleman.API.MiddlemanAPI_Cart;
+import Middleman.API.MiddlemanAPI_InOutBounds;
 import Middleman.API.MiddlemanAPI_UserProduct;
 import Middleman.API.MiddlemanAPI_Users;
 import io.cucumber.java.After;
@@ -15,9 +16,14 @@ import java.io.File;
 import static Middleman.API.MiddlemanAPI_InOutBounds.URL;
 
 public class HookLogin3 {
+    @Before("@invalidTokenErnaUser")
+    public void invalidTokenErnaUser(){
+        MiddlemanAPI_Users.TOKEN_ERNAUSER = "Bearer invalid1234567io";
+    }
+
     @Before("@loginErnaUser")
     public void loginErnaUser(){
-        File json = new File("src/test/resources/JSONFile/Login/ValidLoginUser4.json");
+        File json = new File("src/test/resources/JSONFile/Login/ValidLoginUser3.json");
         Response response= SerenityRest.given()
                 .contentType(ContentType.JSON)
                 .body(json)
@@ -27,11 +33,6 @@ public class HookLogin3 {
         MiddlemanAPI_UserProduct.TOKEN_ERNAUSER = "Bearer "+ jsonPath.get("data.token");
         MiddlemanAPI_Cart.TOKEN_ERNAUSER = "Bearer "+ jsonPath.get("data.token");
 
-    }
-
-    @Before("@invalidTokenErnaUser")
-    public void invalidTokenErnaUser(){
-        MiddlemanAPI_Users.TOKEN_ERNAUSER = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJR";
     }
 
     @After
