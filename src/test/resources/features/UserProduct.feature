@@ -163,7 +163,7 @@ Feature: User_Product
   Scenario: Get Search product (authorized user) with empty value param
     Given Get search product user with valid parameter name ""
     When Send request get search product user
-    Then Status code should be 400 bad request
+    Then Status code should be 200 OK
 
   @user_product @Positive
   Scenario: Get search product user with invalid path
