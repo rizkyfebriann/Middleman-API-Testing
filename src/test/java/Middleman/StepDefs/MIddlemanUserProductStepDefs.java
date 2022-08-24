@@ -164,10 +164,12 @@ public class MIddlemanUserProductStepDefs {
     public void getSearchProductUserWithValidParameterName(String productname) {
         middlemanAPIUserProduct.getSearchProductUser(productname);
     }
-//    @Given("Get search product user with valid parameter name")
-//    public void getSearchProductUserWithValidParameterName() {
-//        middlemanAPIUserProduct.getSearchProductUser();
-//    }
+
+    @Given("Get search product user with two alphabet contains from product name {string}")
+    public void searchProductWithTwoAlphabets(String productName) {
+        getSearchProductUserWithValidParameterName(productName);
+    }
+
     @When("Send request get search product user")
     public void sendRequestGetSearchProductUser() {
         SerenityRest.when().get(MiddlemanAPI_UserProduct.GET_SEARCH_PRODUCT_USER);

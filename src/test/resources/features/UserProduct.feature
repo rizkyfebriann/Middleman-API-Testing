@@ -131,37 +131,37 @@ Feature: User_Product
     Then Status code should be 200 OK
     And Get all search product user assert json validation
 
-  @user_product @Positive
+  @user_product @Positive @loginErnaUser
   Scenario: Get search product user with two alphabet contains from product name
-    Given Get search product user with two alphabet contains from product name "gu"
+    Given Get search product user with valid parameter name "gu"
     When Send request get search product user
     Then Status code should be 200 OK
     And Get all search product user assert json validation
 
-  @user_product @Positive
+  @user_product @Positive @loginErnaUser
   Scenario: Get search product (authorized user) with keyword numeric
-    Given Get search product user with keyword numeric "12"
+    Given Get search product user with valid parameter name "12"
     When Send request get search product user
     Then Status code should be 200 OK
     And Get all search product user assert json validation
 
-  @user_product @Positive
+  @user_product @Positive @loginErnaUser
   Scenario: Get search product (authorized user) with special chart
-    Given Get search product user with special chart "@"
+    Given Get search product user with valid parameter name "@"
     When Send request get search product user
     Then Status code should be 200 OK
     And Get all search product user assert json validation
 
-  @user_product @Positive
+  @user_product @Positive @loginErnaUser
   Scenario: Get search products with combination of alphanumeric character
-    Given Get search product user with combination of alphanumeric character "gula1"
+    Given Get search product user with valid parameter name "gula1"
     When Send request get search product user
     Then Status code should be 200 OK
     And Get all search product user assert json validation
 
-  @user_product @Positive
+  @user_product @Positive @loginErnaUser
   Scenario: Get Search product (authorized user) with empty value param
-    Given Get search product user with empty value param ""
+    Given Get search product user with valid parameter name ""
     When Send request get search product user
     Then Status code should be 400 bad request
 
